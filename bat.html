@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bat</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #191919;
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        div.container{
+            margin: auto;
+            width: 18rem;
+            height: 7rem;
+            background-color: #f2ad43;
+            position: relative;
+            overflow: hidden;
+        }
+
+        div.dark-box{
+            position: absolute;
+            width: 7rem;
+            height: 3rem;
+            background-color: #191919;
+            top: 0;
+            left: calc(50% - 3.5rem);
+            border-radius: 0 0 1rem 1rem;
+        }
+
+        div.dark-box::before{
+            content: "";
+            position: absolute;
+            width: 2rem;
+            height: 2.2rem;
+            bottom: 0;
+            left: calc(50% - 1rem);
+            background-color: #f2ad43;
+            border-radius: 50% 50% 0 0;
+        }
+
+        div.dark-box::after{
+            content: "";
+            position: absolute;
+            width: .9rem;
+            height: .9rem;
+            top: 7px;
+            left: calc(50% - 1.375rem);
+            background-color: #f2ad43;
+            box-shadow: 1.8rem 0 0 0 #f2ad43;
+            border-radius: 50%;
+        }
+
+        span{
+            position: absolute;
+            transform: rotate(-25deg);
+            background-color: #191919;
+            width: 5rem;
+            height: 8rem;
+            border-radius: 50%;
+            top: -10px;
+            left: -2.8rem;
+        }
+
+        span:nth-child(2){
+            height: 5rem;
+            width: 10rem;
+            top: 5rem;
+            left: 0rem;
+            transform: rotate(10deg);
+        }
+
+        span:nth-child(3){
+            transform: rotate(25deg);
+            width: 5rem;
+            height: 8rem;
+            top: -10px;
+            left: 15.2rem;
+        }
+
+        span:nth-child(4){
+            height: 5rem;
+            width: 11rem;
+            top: 5rem;
+            left: 7.5rem;
+            transform: rotate(-10deg);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dark-box"></div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

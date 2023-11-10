@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphism Cards</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(214, 233, 239);
+            color: rgb(0, 0, 0);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            font-family: monospace;
+        }
+
+        div.card {
+            width: 20rem;
+            height: 31rem;
+            margin: auto;
+            border-radius: 2rem;
+            box-shadow: -5px -5px 1rem rgb(238, 244, 245),
+                        5px 5px 1rem rgb(192, 193, 193);
+            /* background-color: aliceblue; */
+            color: #CC98FF;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        div.card:hover{
+            cursor: pointer;
+            box-shadow: 5px 5px 1rem rgb(238, 244, 245),
+                        -5px -5px 1rem rgb(192, 193, 193);
+        }
+
+        div.card *:not(p) {
+            margin-top: 1.5rem;
+        } 
+
+        img {
+            width: 10rem;
+            aspect-ratio: 1;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        p{
+            font-size: 1rem;
+            padding: 0 1rem;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        a{
+            text-decoration: none;
+            color: #CC98FF;
+            display: block;
+            font-size: 1rem;
+            border-radius: 2rem;
+            padding: 1rem 2rem;
+            box-shadow: -3px -3px 1rem rgb(238, 244, 245),
+                        3px 3px 1rem rgb(192, 193, 193);
+        }
+
+        a:hover{
+            cursor: pointer;
+            box-shadow: 3px 3px 1rem rgb(238, 244, 245),
+                        -3px -3px 1rem rgb(192, 193, 193);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img src="rocket.png" alt="">
+        <h2>ROCKET</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, nihil dolores dolor aliquam fugiat et
+            adipisci! Beatae aliquid sunt quisquam minus, veritatis error pariatur, natus necessitatibus, nam corrupti
+            dolor accusamus!</p>
+        
+            <a href="#">Read More</a>
+    </div>
+
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=d071ZRyZlyM&ab_channel=OnlineTutorials -->

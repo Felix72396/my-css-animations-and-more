@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Mouseover heart effect</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+           
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        span{
+            position: absolute;
+            /* width: 10px;
+            height: 10px; */
+            /* background-size: 5%;
+            background-position: center center;
+            background-repeat: no-repeat; */
+            background: url(heart.png);
+            pointer-events: none;
+            /* transform: translate(-50%, -50%); */
+            animation: animate 3s linear infinite;
+        }
+
+        /* img{
+            width: 100%;
+            height: 100%;
+        } */
+
+        @keyframes animate {
+            0%{
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+            100%{
+                transform: translate(-50%, -1000%);
+                filter: hue-rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <i class="fa fa-heartbeat" aria-hidden="true"></i> -->
+    <!-- <span><img src="heart.png" alt=""></span> -->
+
+    <script>
+        document.addEventListener("mousemove", function(e){
+            var body = document.querySelector("body");
+            var heart = document.createElement("span");
+            var x = e.offsetX;
+            var y = e.offsetY;
+            heart.style.left = x+"px";
+            heart.style.top = y+"px";
+            var size = Math.random() * 220;
+            heart.style.width = 20 + size+"px"; 
+            heart.style.height = 20 + size+"px";
+            heart.style.backgroundRepeat = "no-repeat";
+            heart.style.backgroundSize = "50%";
+            heart.style.backgroundPosition = "center center"; 
+           
+            body.appendChild(heart);
+
+            setTimeout(function(){
+                heart.remove();
+            }, 2000);
+        });
+
+        
+    </script>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=I0R0T7p5oR8&ab_channel=OnlineTutorials -->

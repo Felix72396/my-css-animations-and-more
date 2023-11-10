@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windmill</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #191919;
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        div.windmill{
+            width: 40%;
+            height: 80%;
+            margin: auto;
+            position: relative;
+            /* background-color: rgba(240, 248, 255, 0.271); */
+            animation: rotate 1s linear infinite;
+        }
+
+        @keyframes rotate {
+            100%{
+                transform: rotate(1turn);
+            }
+        }
+
+        span{
+            position: absolute;
+            top: calc(50% - 5rem);
+            left: calc(50% - 10rem);
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            border-bottom: 5rem solid #f9e492;
+            transform: rotate(.5turn);
+        }
+
+        span:nth-child(2){
+            left: calc(50%);
+            transform: none;
+        }
+
+        span:nth-child(3){
+            border-bottom: 5rem solid #4f77ff;
+            top: calc(50% - 10rem);
+            left: calc(50% - 5rem);
+            transform: rotate(-90deg);
+        }
+
+        span:nth-child(4){
+            border-bottom: 5rem solid #4f77ff;
+            top: calc(50%);
+            left: calc(50% - 5rem);
+            transform: rotate(90deg);
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="windmill">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</body>
+</html>

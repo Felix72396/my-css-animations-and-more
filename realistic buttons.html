@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Buttons</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+ 
+            font-family: monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+     
+            background-color: rgb(209, 233, 243);
+        }
+
+        div.container{
+            position: relative;
+            width: 47rem;
+            height: 10.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        a{
+            position: relative;
+            width: 15rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a:hover :is(span.button-top, span.button-body){
+            box-shadow: 0 0 15rem 1rem #a1eb5c;
+            background-color: #35f413;
+        }
+
+        a:nth-child(2):hover :is(span.button-top, span.button-body){
+            box-shadow: 0 0 15rem 1rem #eb5c5c;
+            background-color: #f41313;
+        }
+
+        a:active span.button-top{
+            top: 1.2rem;
+        }
+
+        a:active span.button-body{
+            height: 5rem;
+        }
+
+        span{
+            position: absolute;
+        }
+
+        span.button-top{
+            background-color: #4FE236;
+            width: 15rem;
+            height: 5rem;
+            border-radius: 50%;
+            z-index: 1;
+            top: 0rem;
+            transition: 1s all;
+        }
+
+        a:nth-child(2) span.button-top{
+            background-color: #f41313;
+        }
+
+        span.button-body{
+            background-color: #3BBE22;
+            width: 15rem;
+            height: 7rem;
+            border-radius: 10%;
+            border-bottom-right-radius: 47%;
+            border-bottom-left-radius: 47%;
+            bottom: 1.7rem;
+            transition: 1s all;
+        }
+
+        a:nth-child(2) span.button-body{
+            background-color: #df0c0c;
+        }
+
+        span.button-border{
+            background-color: #95918d;
+            width: 16.2rem;
+            height: 7rem;
+            border-radius: 50%;
+           
+            z-index: -1;
+            bottom: 1.4rem;
+        }
+
+        span.button-bottom{
+            background-color: #7C6866;
+       
+            width: 16.2rem;
+            height: 6rem;
+            border-radius: 20%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+           
+            z-index: -2;
+            bottom: .1rem;
+        }
+
+
+      
+  
+    </style>
+</head>
+
+<body>
+   <div class="container">
+        <a href="#">
+            <span class="button-top"></span>
+            <span class="button-body"></span>
+            <span class="button-border"></span>
+            <span class="button-bottom"></span>
+        </a>
+
+        <a href="#">
+            <span class="button-top"></span>
+            <span class="button-body"></span>
+            <span class="button-border"></span>
+            <span class="button-bottom"></span>
+        </a>
+   </div>
+</body>
+
+</html>

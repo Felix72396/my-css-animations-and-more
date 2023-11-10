@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Checkbox</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(31, 31, 31);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        div.container {
+            position: relative;
+          
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            /* border: 1px solid rgb(0, 255, 0); */
+
+        }
+
+        input[type="checkbox"]{
+            width: 20rem;
+            height: 8rem;
+            position: relative;
+            -webkit-appearance: none;
+            background: linear-gradient(to bottom, black, rgb(54, 52, 52));
+            border-radius: 5rem;
+            border: 8px solid rgb(49, 48, 48); 
+            box-shadow: inset 0 0 1rem 0 #000,
+                        0 0 0 .2rem rgb(60, 60, 60);
+                      
+            cursor: pointer;
+            transition: 1s all;
+      
+        }
+
+        input[type="checkbox"]:checked{
+            background: rgb(0, 255, 55);
+
+        }
+
+        input[type="checkbox"]::before{
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 95%;
+            background: linear-gradient(to top, black, rgb(54, 52, 52));
+            border-radius: 5rem;
+            border: 2px solid rgb(32, 29, 29);
+            top: calc(50%);
+            left: 0;
+            transform: translateY(-50%);
+            transition: .5s all;
+        }
+
+        input[type="checkbox"]::after{
+            content: "";
+            position: absolute;
+            width: .5rem;
+            height: .5rem;
+            background: linear-gradient(to bottom, rgb(19, 18, 18), rgb(54, 52, 52));
+            border-radius: 50%;
+            top: calc(50%);
+            left: 45%;
+            transform: translateY(-50%);
+            transition: .5s all;
+    
+        }
+
+        input[type="checkbox"]:checked::before{
+            left: calc(40% - 4px);
+        }
+
+        input[type="checkbox"]:checked::after{
+            left: calc(85%);
+            background: rgb(0, 255, 55);
+            box-shadow: 0 0 1rem .2rem rgb(0, 255, 55);
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+     <input type="checkbox" name="" id="">
+     <!-- <input type="checkbox" name="" id=""> -->
+    </div>
+
+   
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=z3TgmTi42ic&ab_channel=OnlineTutorials -->

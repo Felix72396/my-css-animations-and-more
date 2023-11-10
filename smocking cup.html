@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smocking cup</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(rgb(87, 114, 120), rgb(184, 181, 181));
+            color: #fff;
+            display: grid;
+        }
+
+        div.container{
+            width: 35vmax;
+            height: 20vmax;
+            margin: auto;
+            /* background-color: black; */
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+        }
+
+        div.plate{
+            width: 35vmax;
+            height: 15vmin;
+            border-radius: 50%;
+            background: radial-gradient(rgb(105, 98, 98) 10%, rgb(209, 205, 205), rgb(243, 238, 238));
+            /* border: 5px solid rgb(233, 231, 231); */
+            position: relative;
+        }
+
+        div.plate::before{
+            content: "";
+            inset: -.5rem;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, rgb(243, 239, 239), rgb(196, 191, 191));
+
+            position: absolute;
+            z-index: -1;
+        }
+
+        div.cup{
+            width: calc(2.5rem + 15vmax);
+            height: 80%;
+            border-radius: 1.7rem 1.7rem 40% 40%;
+            background: linear-gradient(to right,rgb(227, 221, 221), rgb(183, 173, 173));
+
+            position: absolute;
+            z-index: 1;
+            top: 1rem;
+            /* overflow: hidden; */
+        }
+
+        div.cup::before{
+            content: "";
+            position: absolute;
+            /* background-color: #fff; */
+            border: 25px solid rgb(183, 173, 173);
+            border-left: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            width: 32%;
+            height: 38%;
+            transform: rotate(40deg);
+            border-radius: 50%;
+            right: -4vmax;
+            top: 2rem;
+            z-index: -2;
+        }
+
+        div.top{
+            width: 49%;
+            height: 20%;
+            border-radius: 50%;
+            background: linear-gradient(to right,rgb(227, 221, 221), rgb(183, 173, 173));
+
+            position: absolute;
+            z-index: 2;
+            top: .1rem;
+            /* overflow: hidden; */
+            display: flex;
+            justify-content: center;
+
+        }
+
+        div.circle{
+            background: linear-gradient(to right,rgb(199, 193, 193), rgb(249, 249, 249));
+            width: 92%;
+            height: 70%;
+            border-radius: 50%;
+            position: absolute;
+            top: .5rem;
+            overflow: hidden;
+        }
+
+        div.circle::before{
+            content: ""; 
+            top: 1.5rem;
+            bottom: 0;
+            right: 0rem;
+            left: 0rem;
+            border-radius: 50%;
+            background-color: rgb(167, 111, 68);
+            position: absolute;
+        }
+
+        div.smoke-container{
+            width: 200%;
+            height: 18rem;
+            /* background-color: aqua; */
+            position: absolute;
+            top: -15rem;
+            z-index: 5;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 50% 50% 0 0;
+            /* background-color: aqua; */
+        }
+
+        span{
+            height: 2rem;
+            width: 1rem;
+            background-color: rgb(236, 225, 206);
+            margin: 0 1rem;
+            filter: blur(20px);
+            /* transform: scale(1) skew(45deg); */
+            /* position: absolute; */
+            animation: smoke 5s linear infinite;
+            position: relative;
+            bottom: 2rem;
+        }
+
+        span:nth-child(1){
+            animation-delay: -1s;
+        }
+
+        span:nth-child(2){
+            animation-delay: -2s;
+        }
+
+        span:nth-child(3){
+            animation-delay: -3s;
+        }
+
+        @keyframes smoke {
+            0%{
+                transform: skew(5deg);
+            }
+            10%{
+                transform: skew(15deg);
+            }
+            40%{
+                transform: skew(10deg);      
+            }
+            80%{
+                transform: skew(-15deg); 
+                /* height: 10rem; */
+            }
+            100%{
+                transform: skew(5deg); 
+                height: 15rem;
+                width: .3rem;
+                filter: blur(50px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+     
+        <div class="top">  
+            <div class="smoke-container">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="circle"></div></div>
+        <div class="cup">
+          
+        </div>
+        <div class="plate"></div>
+
+    </div>
+</body>
+</html>
+<!-- https://www.youtube.com/watch?v=_jOqYe0eFqY&ab_channel=OnlineTutorials -->

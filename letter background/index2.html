@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter background</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            word-break: break-all;
+        }
+
+        body {
+            background-image: url(sunset.jpg);
+            background-position: center center;
+            background-size: 100%;
+            /* background-repeat: no-repeat; */
+           
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+           
+            animation: background-picture 7s ease-in-out;
+        }
+
+        div{
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+            width: 100%;
+            height: 100%;
+            animation: div-opacity 5s ease-in-out;
+            opacity: 0;  
+        }
+
+        label{
+            margin-left: 2rem;
+            font-weight: bolder;
+            font-size: 10rem;
+            color: #fff;
+            background: url(sunset.jpg);
+            background-size: contain;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: font 5s ease-in-out;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0; 
+        }
+
+        @keyframes font {
+            0%{
+                font-size: 5rem;
+                opacity: 1;
+            }
+            70%{
+                font-size: 10rem;
+            }
+            100%{
+                opacity: 0;  
+            }
+        }
+
+        @keyframes div-opacity {
+            0%,50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;  
+            }
+        }
+
+        @keyframes background-picture {
+            0%{
+                background-size: 0%;
+            }
+            100%{
+                background-size: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="">SUNRISE</label>
+    </div>
+</body>
+
+</html>
+<!-- https://www.youtube.com/watch?v=m30frh3KzLU&ab_channel=LaCocinadelC%C3%B3digo -->

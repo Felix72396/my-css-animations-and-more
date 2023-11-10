@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverted Border Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(21, 20, 20);
+            color: #fff;
+        }
+
+        .card{
+            background-color: rgb(153, 255, 0);
+            width: 300px;
+            height: 450px;
+            margin: auto;
+            inset: 0;
+            position: absolute;
+            border-radius: 80px 15px 15px 15px;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            transition: .5s all;
+        }
+        
+        .card:hover{
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        section{
+            background-color: rgb(21, 20, 20);
+            width: 95%;
+            height: 95%;
+            border-radius: 80px 15px 15px 15px;
+            position: relative;
+        }
+
+        figure{
+            background-color: rgb(21, 20, 20);
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform: translate(0px,0px);
+
+            border-radius: 50% 25px 50% 25px;
+            padding: 25px;
+            margin-bottom: 50px;
+
+            border: 10px solid rgb(153, 255, 0);
+            z-index: 1;
+            left: -2px;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p{
+            padding: 10px;
+            text-align: center;
+        }
+
+        a{
+            text-decoration: none;
+            color: #000000;
+            font-weight: 700;
+            display: block;
+            text-align: center;
+            background-color: rgb(153, 255, 0);
+            padding: 15px 20px;
+            border-radius: 40px;
+            width: 60%;
+            margin: auto;
+            font-size: 1.2rem;
+            transition: .5s all;
+        }
+
+        a:hover{
+            width: 70%;
+            letter-spacing: 4px;
+        }
+
+        span{
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 30px;
+         
+            background-color: rgb(21, 20, 20);
+            transform: translate(0px,-50px);
+            border-radius: 30px 0 0 0;
+
+            box-shadow: -15px -15px 0 15px rgb(153, 255, 0);
+            
+        }
+
+       
+
+        .sp2{
+            transform: translate(148px,-199.8px);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        
+        <section>
+            <figure>
+                <img src="rocket.png" alt="">
+            </figure>
+            <span class="sp1"></span>
+            <span class="sp2"></span>
+            <h2>LAUNCH</h2>
+            <P>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur expedita ducimus consequuntur debitis
+                blanditiis, accusamus, in deleniti facere esse eveniet.
+            </P>
+            <a href="#">READ MORE</a>
+        </section>
+    </div>
+</body>
+
+</html>

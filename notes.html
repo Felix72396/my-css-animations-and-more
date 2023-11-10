@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical notes</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: #191919;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        div.note-box{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: auto;
+            /* width: 500px; */
+            /* background-color: #fe5f55; */
+            display: flex;
+            /* justify-content: space-around; */
+        }
+
+        div.note{
+            height: 12rem;
+            width: 9rem;
+            border: 15px solid #fe5f55;
+
+            position: relative;
+        }
+
+        div.note:nth-child(1){
+            border-bottom: none;
+            margin-right: 4rem;
+        }
+
+        div.note:nth-child(1)::before, div.note:nth-child(1)::after{
+            content: "";
+            background-color: #fe5f55;
+            position: absolute;
+            width: 6rem;
+            height: 5rem;
+            border-radius: 50%;
+            bottom: -2.7rem;
+        }
+
+        div.note:nth-child(1)::before{
+            left: -6rem;
+        }
+
+        div.note:nth-child(1)::after{
+            right: -.92rem;
+        }
+
+        div.note:nth-child(2){
+            border: 15px solid #a64942;
+            border-bottom: none;
+            border-right: none;
+            width: 5rem;
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+
+        div.note:nth-child(2)::before{
+            content: "";
+            background-color: #a64942;
+            position: absolute;
+            width: 6rem;
+            height: 5rem;
+            border-radius: 50%;
+            bottom: -2.7rem;
+            left: -6rem;
+        }
+
+        div.note:nth-child(3){
+            border: 15px solid #fe5f55;
+            border-bottom: none;
+            border-right: none;
+            width: 5rem;
+        }
+
+        div.note:nth-child(3)::before, div.note:nth-child(3)::after{
+            content: "";
+            background-color: #fe5f55;
+            position: absolute;
+            width: 6rem;         
+        }
+
+        div.note:nth-child(3)::before{
+            bottom: -2.7rem;
+            left: -6rem;
+            height: 5rem;
+            border-radius: 50%;  
+        }
+
+        div.note:nth-child(3)::after{
+            height: 15px;
+            width: 4.1rem;
+            left: 0;
+            top: 1rem;
+        }
+
+
+
+    </style>
+</head>
+<body>
+   <div class="note-box">
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+   </div>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=A0J-hB3kSQ4&ab_channel=KevinPowell -->

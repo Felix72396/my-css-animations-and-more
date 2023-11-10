@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conic Gradient</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        div{
+            position: absolute;
+            margin: auto;
+            inset: 0;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: conic-gradient(
+                red .25turn,
+                blue .25turn .5turn,
+                green .5turn
+            );
+        }
+
+        div{
+            background: conic-gradient(
+                red .25turn,
+                blue .25turn .7turn,
+                green .7turn
+            );
+        }
+
+    </style>
+</head>
+<body>
+   <div></div>
+   <div></div>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=0gayskscLY4&ab_channel=WebDevSimplified -->

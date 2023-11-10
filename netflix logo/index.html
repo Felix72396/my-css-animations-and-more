@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: black;
+            display: grid;
+            place-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        div{
+            position: relative;
+            width: 176px;
+            height: 250px;
+           
+            overflow: hidden;
+            animation: netflix 3s ease-in-out infinite;
+        }
+
+        div::before{
+            content: "";
+            width: 60px;
+            height: 250px;
+            position: absolute;
+            background-color: #AB060F;
+            right: 0;
+            animation: vanish-up-before 3s ease-in-out infinite;
+        }
+
+        div::after{
+            content: "";
+            width: 60px;
+            height: 250px;
+            position: absolute;
+            background-color: #AB060F;
+            left: 0;
+            animation: vanish-up-after 3s ease-in-out infinite;
+        }
+
+        span{
+            width: 60px;
+            height: 250px;
+            position: absolute;
+            background-color: #DE0912;
+            box-shadow: 0 0 15px;
+            transform: skew(25deg);
+            left: 58px;
+            z-index: 1;
+            animation: vanish-down 3s ease-in-out infinite;
+        }
+
+        @keyframes netflix{
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.5);
+            }
+        }
+
+        @keyframes vanish-up-after{
+            0%{
+                bottom: 0;
+            }
+            40%,80%,100%{
+                bottom: 100%;
+            }
+        }
+
+        @keyframes vanish-up-before{
+            0%,72%{
+                bottom: 0;
+            }
+            100%{
+                bottom: 100%;
+            }
+        }
+
+        @keyframes vanish-down{
+            0%,38%{
+                top: 0;
+                left: 58px;
+            }
+            70%,100%{
+                top: 100%;
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span></span>
+    </div>
+</body>
+</html>

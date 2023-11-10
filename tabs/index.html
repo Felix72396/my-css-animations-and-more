@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(29, 28, 28);
+            color: #fff;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        section {
+            /* background-color: rgb(194, 158, 111); */
+            width: 25rem;
+            height: auto;
+            
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+
+        img {
+            position: relative;
+            width: 38%;
+            aspect-ratio: 1;
+            border-radius: 1rem;
+            margin: 1rem;
+            padding: 1.2rem;
+            box-shadow: -1px -1px 2px rgb(41, 41, 41),
+                1px 1px 2px rgb(4, 4, 4);
+            transition: .5s all;
+        }
+
+        .img-selected {
+            box-shadow: 1px 1px 2px rgb(41, 41, 41),
+                -1px -1px 2px rgb(4, 4, 4);
+            background: radial-gradient(rgb(20, 20, 20), transparent);
+            padding: 1rem;
+        }
+
+        div.info{
+            width: 40rem;
+            min-height: 20rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.info div{
+            position: absolute;
+            transform: scale(0) translate(-50%, -50%);
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+            transition: 1s all;
+
+        }
+
+        .show-info{
+            /* display: block; */
+            opacity: 1 !important;
+            transform: scale(1) translate(-50%, -50%) !important;
+            top: 0%;
+            left: 50%; 
+        }
+
+        h2{
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p{
+            text-align: justify;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img class="img-selected" title="Instagram" src="instagram.png">
+        <img title="Youtube" src="youtube.png">
+        <img title="WhatsApp" src="whatsapp.png">
+        <img title="LinkedIn" src="linkedin.png">
+    </section>
+
+    <div class="info">
+        <div class="instagram-info show-info">
+            <h2>Instagram Information</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus similique, eveniet, ipsam repellendus
+                numquam dolore nihil expedita omnis cupiditate qui unde, laborum maxime placeat perferendis hic at ipsum
+                distinctio? Sunt laboriosam id atque dolores doloremque quibusdam excepturi vitae dolor rem
+                reprehenderit porro, ipsa dolore iusto, tempore quod illum, enim natus?
+            </p>
+        </div>
+
+        <div class="youtube-info">
+            <h2>Youtube Information</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus similique, eveniet, ipsam repellendus
+                numquam dolore nihil expedita omnis cupiditate qui unde, laborum maxime placeat perferendis hic at ipsum
+                distinctio? Sunt laboriosam id atque dolores doloremque quibusdam excepturi vitae dolor rem
+                reprehenderit porro, ipsa dolore iusto, tempore quod illum, enim natus?
+            </p>
+        </div>
+
+        <div class="whatsapp-info">
+            <h2>WhatsApp Information</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus similique, eveniet, ipsam repellendus
+                numquam dolore nihil expedita omnis cupiditate qui unde, laborum maxime placeat perferendis hic at ipsum
+                distinctio? Sunt laboriosam id atque dolores doloremque quibusdam excepturi vitae dolor rem
+                reprehenderit porro, ipsa dolore iusto, tempore quod illum, enim natus?
+            </p>
+        </div>
+
+        <div class="linkedin-info">
+            <h2>LinkedIn Information</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus similique, eveniet, ipsam repellendus
+                numquam dolore nihil expedita omnis cupiditate qui unde, laborum maxime placeat perferendis hic at ipsum
+                distinctio? Sunt laboriosam id atque dolores doloremque quibusdam excepturi vitae dolor rem
+                reprehenderit porro, ipsa dolore iusto, tempore quod illum, enim natus?
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const img_list = document.getElementsByTagName("img");
+        const div_list = document.querySelectorAll(".info div");
+
+        for (let i = 0; i < img_list.length; i++) 
+        {
+            img_list[i].addEventListener("mouseover", function()
+            {
+                setTimeout(function(){
+                    div_list[i].classList.add("show-info");
+                    img_list[i].classList.add("img-selected");
+                }, 300);
+              
+
+                for (let j = 0; j < img_list.length; j++) 
+                {
+                    if(div_list[i] !=div_list[j])
+                    {
+                        setTimeout(function(){
+                            div_list[j].classList.remove("show-info");
+                            img_list[j].classList.remove("img-selected");
+                        }, 500);
+                    }
+                }
+            });   
+        }
+     
+    </script>
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=1e7dAyEDe3o&ab_channel=OnlineTutorials -->
+
+<!-- https://web.dev/i18n/es/min-max-clamp/ -->

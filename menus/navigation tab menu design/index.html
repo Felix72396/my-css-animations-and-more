@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Menu Design</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+  
+
+        body {
+            background: rgb(52, 51, 51);
+            color: rgb(223, 223, 223);
+            width: 100vw;
+            height: 100vh;
+            font-family: sans-serif;
+            font-size: 2rem;
+        }
+
+        [class*="container"]{
+            display: flex;
+            position: relative;
+        }
+
+        nav.menu-container{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 600px;
+            height: 120px;
+            background-color: rgb(51, 52, 51);
+            box-shadow: 0 0 10px 1px rgb(15, 15, 15) inset,
+            0 0 20px 15px rgb(63, 62, 62) inset,
+            0 0 100px 10px rgb(30, 29, 29);
+            border-radius: 30px;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+        }
+
+        ul.icon-container{
+            list-style: none;
+            width: 100%;
+            height: 75%;
+            /* align-self: flex-end; */
+
+        }
+
+        li.container{
+            cursor: pointer;
+            position: relative;
+            width: 20%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            transition: 1s all ease-in-out;
+        }
+
+        li a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          
+            color: rgb(223, 223, 223);
+            text-decoration: none;
+            border-radius: 50%;
+            width: 90%;
+            aspect-ratio: 1;
+            background-color: transparent;
+            transition: 1s all ease-in-out;
+            isolation: isolate;
+        }
+
+        li a span{
+           
+            position: absolute;
+
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            width: 55%;
+            height: 55%;
+            opacity: 0;
+            background-color: rgb(51, 52, 51);
+            box-shadow: 5px 3px 5px rgb(92, 91, 91) inset,
+                        -5px -3px 5px rgb(14, 14, 14) inset,
+                        5px 6px 20px rgb(14, 14, 14);
+            border-radius: 50%;
+            z-index: -1;
+            transition: .3s all ease-in-out;
+        }
+
+        div.text-container{
+            width: 100%;
+            bottom: 10%;
+            position: absolute;
+        }
+
+        div.text-container h6{
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 20%;
+          
+            text-align: center;
+            opacity: 0;
+
+            transition: .5s all ease-in-out;
+            transition-delay: .5s;
+        }
+
+        div.text-container h6 span{
+            display: block;
+            width: 70%;
+            padding-block: 5px;
+              
+            border-radius: 15px;
+            color: #000;
+            font-weight: 700;
+            font-size: 15px;
+            background-color: rgb(238, 232, 232);
+            box-shadow: 0 -5px 8px rgb(14, 14, 14) inset;
+        }
+
+
+        div.dot-container{
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        div.dot-container span{
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: rgb(16, 15, 15);
+            transition: 1s all ease-in-out;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="menu-container">
+        <ul class="icon-container">
+            <li class="container">
+                <a href="#">
+                    <span></span>  
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </a>            
+            </li>
+
+            <li class="container">
+                <a href="#">
+                    <span></span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>         
+            </li>
+
+            <li class="container">
+                <a href="#">
+                    <span></span>
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+                </a>                       
+            </li>
+
+            <li class="container">
+                <a href="#">
+                    <span></span>  
+                    <i class="fa fa-camera" aria-hidden="true"></i>  
+                </a>                     
+            </li>
+
+            <li class="container">
+                <a href="#">
+                    <span></span>  
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </a>                    
+            </li>
+        </ul>
+        <div class="text-container">
+            <h6 class="container">
+                <span>Home</span>
+            </h6>
+            <h6 class="container">
+                <span>User</span>
+            </h6>
+            <h6 class="container">
+                <span>Messages</span>
+            </h6>
+            <h6 class="container">
+                <span>Camera</span>
+            </h6>
+            <h6 class="container">
+               <span>Setting</span>
+            </h6>
+        </div>
+        <div class="dot-container">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <script>
+        const li_list = document.getElementsByTagName("li");
+        const icon_circle_list = document.querySelectorAll("li a");
+        const circle_list = document.querySelectorAll("li a span");
+        const text_list = document.getElementsByTagName("h6");
+        const dot_list = document.querySelectorAll("div.dot-container span");
+
+        for (let index = 0; index < li_list.length; index++) 
+        {
+            li_list[index].addEventListener("click", ()=>{
+                li_list[index].style.transform = "translateY(-60px)";
+
+                icon_circle_list[index].style.backgroundColor = "rgb(45, 246, 45)";
+
+                circle_list[index].style.width = "75%";
+                circle_list[index].style.height = "75%";
+                circle_list[index].style.opacity = "1";
+
+                text_list[index].style.transform = "translateY(-20px)";
+                text_list[index].style.opacity = "1";
+
+                dot_list[index].style.backgroundColor = "rgb(45, 246, 45)";
+                dot_list[index].style.boxShadow = "0 0 5px 0 rgb(45, 246, 45)";
+               
+
+                for (let j = 0; j < li_list.length; j++) 
+                {
+                    if(index != j)
+                    {
+                        
+                        li_list[j].style.transform = "translateY(0)";
+
+                        icon_circle_list[j].style.backgroundColor = "transparent";
+
+                        setTimeout(function(){
+                            circle_list[j].style.width = "0%";
+                            circle_list[j].style.height = "0%";
+                            circle_list[j].style.opacity = "0";
+                        }, 300);
+
+                        text_list[j].style.transform = "translateY(0)";
+                        text_list[j].style.opacity = "0";
+
+                        dot_list[j].style.backgroundColor = "rgb(16, 15, 15)";
+                        dot_list[j].style.boxShadow = "none";
+                     
+                    }                 
+                }
+            }); 
+            
+        }
+    </script>
+</body>
+</html>
+<!-- https://www.youtube.com/watch?v=aX9mMaSlkBE&ab_channel=OnlineTutorials -->

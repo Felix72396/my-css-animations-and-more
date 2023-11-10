@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color: #fff;
+            font-size: 5rem;
+            background-color: black;
+        }
+
+        .wrapper{
+            width: 300px;
+            height: 300px;
+
+            perspective: 700px;
+            margin: 100px auto;
+        }
+
+        .cube{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            transform-style: preserve-3d;
+            transform: rotateY(180deg) rotateX(-38deg);
+            transition: 800ms ease-in;
+            cursor: pointer;
+        }
+
+        .cube:hover{
+            transform: rotateY(125deg) rotateX(155deg);
+        }
+
+        .cube div{
+            opacity: .7;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        :is(.wrapper:nth-child(1), .wrapper:nth-child(2)) .cube div:nth-child(1){
+            transform: translateZ(75px);
+            background: darkblue;
+        }
+
+        :is(.wrapper:nth-child(1), .wrapper:nth-child(2)) .cube div:nth-child(2){
+            transform: rotateX(180deg) translateZ(75px);
+            background: darkorange;
+        }
+
+        
+        :is(.wrapper:nth-child(1), .wrapper:nth-child(2)) .cube div:nth-child(3){
+            transform: rotateY(-90deg) translateZ(75px);
+            background: darkred;
+        }
+
+        :is(.wrapper:nth-child(1), .wrapper:nth-child(2)) .cube div:nth-child(4){
+            transform: rotateY(90deg) translateZ(75px);
+            background: darkgreen;
+        }
+
+        :is(.wrapper:nth-child(1), .wrapper:nth-child(2)) .cube div:nth-child(5){
+            transform: rotateX(90deg) translateZ(75px);
+            background: darkcyan;
+        }
+
+        :is(.wrapper:nth-child(1), .wrapper:nth-child(2)) .cube div:nth-child(6){
+            transform: rotateX(-90deg) translateZ(75px);
+            background: darkmagenta;
+        }
+
+        /* wrapper 2 */
+        .wrapper:nth-child(2) .cube div:nth-child(1){
+            background-image: url("photo1.jpg");
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .wrapper:nth-child(2) .cube div:nth-child(2){
+            background-image: url("photo2.jpg");
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .wrapper:nth-child(2) .cube div:nth-child(3){
+            background-image: url("photo3.jpg");
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .wrapper:nth-child(2) .cube div:nth-child(4){
+            background-image: url("photo4.jpg");
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .wrapper:nth-child(2) .cube div:nth-child(5){
+            background-image: url("photo5.jpg");
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .wrapper:nth-child(2) .cube div:nth-child(6){
+            background-image: url("photo6.jpg");
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="cube" class="cube">
+            <!-- front -->
+            <div>1</div>
+
+            <!-- back -->
+            <div>2</div>
+
+            <!-- left -->
+            <div>3</div>
+
+            <!-- right -->
+            <div>4</div>
+
+            <!-- top -->
+            <div>5</div>
+
+            <!-- bottom -->
+            <div>6</div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div id="cube2" class="cube">
+            <!-- front -->
+            <div></div>
+
+            <!-- back -->
+            <div></div>
+
+            <!-- left -->
+            <div></div>
+
+            <!-- right -->
+            <div></div>
+
+            <!-- top -->
+            <div></div>
+
+            <!-- bottom -->
+            <div></div>
+        </div>
+    </div>
+
+    <script>
+        const cube = document.getElementById("cube");
+        const cube2 = document.getElementById("cube2");
+        let x_deg = 0,
+            y_deg = 0;
+
+        let x_deg2 = 0,
+            y_deg2 = 0;
+        setInterval(function(){
+            cube.style.transform = `rotateY(${y_deg++}deg) rotateX(${x_deg--}deg)`;
+            cube2.style.transform = `rotateY(${y_deg2++}deg) rotateX(${x_deg2-25}deg)`;
+        }, 1);
+    </script>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=ZzHZTBwc32s&list=PLg9145ptuAihoxLk6_fPLz0zD4o1S92ev&index=9&ab_channel=yacklyon -->

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation conic gradient</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(24, 23, 23);
+            display: flex;
+        }
+
+        div.container{
+            width: 15rem;
+            aspect-ratio: 1;
+            margin: auto;
+            border-radius: 1rem;
+            
+            box-shadow: 1.2rem 1.2rem .6rem 0 rgba(0, 0, 0, 0.425);
+            display: flex;
+            color: rgb(253, 63, 95);
+            font-family: monospace;
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        div.container::before{
+            content: "";
+            position: absolute;
+            inset: -5rem;
+            border-radius: 1rem;
+            /* background: conic-gradient(rgb(253, 63, 95) 10%, rgb(31, 30, 30) 50%); */
+            background: repeating-radial-gradient(rgb(253, 63, 95) , rgb(31, 30, 30) 10%);
+            animation: spin 2.5s linear infinite;
+            z-index: -1;
+        }
+
+        div.container:nth-child(2):before{
+            background: conic-gradient(rgb(253, 63, 95) 10%, rgb(31, 30, 30) 50%);
+            animation: spin2 2.5s linear infinite;
+        }
+
+        div.container:nth-child(3):before{
+            background: repeating-radial-gradient(rgb(253, 63, 95) 1%, rgb(31, 30, 30) 5%);
+            animation: spin3 15s linear infinite;
+        }
+
+        @keyframes spin {
+            100%{
+                transform: rotate(-1turn) scale(1);
+            }
+
+            50%{
+                transform: rotate(-1turn) scale(2);
+            }
+        }
+
+        @keyframes spin2 {
+            100%{
+                transform: rotate(-1turn);
+            }
+        }
+
+        @keyframes spin3 {
+            0%, 100%{
+                transform: skew(0deg) scale(1);
+            }
+            50%{
+                transform: skew(180deg) scale(2);
+            }
+        }
+
+        div.inner-container{
+            width: 14rem;
+            aspect-ratio: 1;
+            margin: auto;
+            border-radius: .8rem;
+            background-color: rgb(24, 23, 23);
+           
+            box-shadow: inset 1.5rem 1.5rem .6rem 0 rgba(0, 0, 0, 0.425);
+   
+            display: grid;
+            place-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-container">
+            Animation
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="inner-container">
+            Animation
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="inner-container">
+            Animation
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radial</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            word-break: break-all;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        center{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        div{
+            background-color: black;
+            flex: Min(150px, 20%);
+            aspect-ratio: 1;
+            border: 1px solid #fff;
+        }
+
+        div:nth-child(1){
+            background: radial-gradient(red, blue);
+        }
+
+        div:nth-child(2){
+            background: radial-gradient(red, blue, red);
+        }
+
+        div:nth-child(3){
+            background: radial-gradient(red, blue, red, blue, red);
+        }
+
+        div:nth-child(4){
+            background: radial-gradient(red, blue, red, blue, red, blue, red, blue, red, blue, red, blue, red, blue, red, blue, red);
+        }
+
+        div:nth-child(5){
+            background: radial-gradient(red 50%, blue);
+        }
+
+        div:nth-child(6){
+            background: radial-gradient(blue, red 50%, blue);
+        }
+
+        div:nth-child(7){
+            background: radial-gradient(blue 20%, red 50%, blue 10%);
+        }
+
+        div:nth-child(8){
+            background: radial-gradient(blue 50%, red 50%, red);
+        }
+
+        div:nth-child(9){
+            background: radial-gradient(blue 20%, red 20%, blue 20%, red 20%);
+        }
+
+        div:nth-child(10){
+            background: radial-gradient(blue 20%, red 20%, red, blue 50%, blue, red 50%, red);
+        }
+
+        div:nth-child(11){
+            background: radial-gradient(blue 20%, red 20%, blue, blue);
+        }
+
+        div:nth-child(12){
+            background: radial-gradient(blue 10%, red 10%, blue 20%, red 20%);
+        }
+
+        div:nth-child(13){
+            background: repeating-radial-gradient(red 10px, gray, black 50px);
+        }
+
+        div:nth-child(14){
+            background: repeating-radial-gradient(red 10px, black 50px);
+        }
+
+        div:nth-child(15){
+            background: repeating-radial-gradient(red, red 10px, black, black 90px);
+        }
+
+        div:nth-child(16){
+            background: repeating-radial-gradient(red, red 20px, black, black 20px, blue 150px);
+        }
+
+        div:nth-child(17){
+            background: radial-gradient(red 50px, black 50px, black 150px, red 150px, red 100%);
+        }
+    </style>
+</head>
+<body>
+  <center>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </center>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supernova</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body
+        {
+            height: 100vh;
+            width: 100vw;
+            background-color: #243d83;
+            color: #fff;
+           position: relative;
+           overflow: hidden;
+           animation: 10s rotate linear infinite;
+        }
+
+        @keyframes rotate {
+            100%{
+                transform: rotate(1turn);
+            }
+        }
+
+
+
+        div{
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(135deg);
+            top: calc(50% - 40px - 1.6rem);
+            left: calc(50% - 80px + .8rem);
+            width: 160px;
+            height: 160px;
+            border-bottom: 80px solid #6592cf;
+            border-radius: 50%;
+        }
+
+        div:nth-child(2)
+        {
+            transform: translate(-50%, -50%) rotate(-135deg);
+            top: calc(50% - 40px - 1.6rem);
+            left: calc(50% + 80px - .8rem);
+        }
+
+        div:nth-child(3)
+        {
+            transform: translate(-50%, -50%) rotate(45deg);
+            top: calc(50% + 40px + 1.6rem);
+            left: calc(50% - 80px + .8rem);
+        }
+
+        div:nth-child(4)
+        {
+            transform: translate(-50%, -50%) rotate(-45deg);
+            top: calc(50% + 40px + 1.6rem);
+            left: calc(50% + 80px - .8rem);
+        }
+
+        span{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: calc(50%);
+            left: calc(50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #eeb850;
+        }
+
+        section{
+            position: absolute;
+            background-color: #6592cf;
+            box-shadow: 0 25.3rem 0 #6592cf;
+            width: 1.4rem;
+            height: 50%;
+            left: calc(50% - .7rem);
+            top: -1rem;
+            border-radius: 2rem;
+        }
+
+        section:last-child{
+            background-color: #365b8f;
+            left: -1rem;
+            top: calc(50% - .7rem);
+            width: 50%;
+            height: 1.4rem;
+            box-shadow: 50rem 0 0 #365b8f;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <span></span>
+
+
+    <section></section>
+    <section></section>
+</body>
+</html>

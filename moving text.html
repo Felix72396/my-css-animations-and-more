@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Wavy Text Effect</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(26, 25, 25);
+            display: flex;
+            font-family: monospace sans-serif;
+        }
+
+        div.container {
+            width: 40rem;
+            height: 10rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* overflow: hidden; */
+            position: relative;
+            margin: auto;
+        
+        }
+
+
+        span{
+            font-size: 5rem;
+            color: #fff;
+            animation: animate 1s linear infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+        
+        div.container:nth-child(2) span{
+            animation: animate2 1s linear infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+         
+        div.container:nth-child(3) span{
+            animation: animate3 5s linear infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+        @keyframes animate {
+            0%{
+                transform: translateY(0);
+ 
+            }
+
+            20% {
+                transform: translateY(-5rem);
+                text-shadow: 0 15rem 5rem rgb(255, 255, 255),
+                             0 -15rem 5rem rgb(255, 255, 255);
+            }
+            40% {
+                transform: translateY(0);
+   
+            }
+        }
+
+        @keyframes animate2 {
+            0%{
+                transform: translateY(0);
+ 
+            }
+
+            20% {
+                transform: translateY(-5rem);
+                text-shadow: 0 15rem 10rem rgb(255, 255, 255),
+                             0 -15rem 10rem rgb(255, 255, 255);
+            }
+            40% {
+                transform: translateY(0);
+   
+            }
+        }
+
+        @keyframes animate3 {
+            0%{
+                transform: translateY(0);
+ 
+            }
+
+            5% {
+                transform: translateY(-5rem);
+                text-shadow: 0 15rem 1rem rgb(255, 255, 255),
+                             0 -15rem 1rem rgb(255, 255, 255);
+            }
+            15% {
+                transform: translateY(0);
+   
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span style="--i:1;">L</span>
+        <span style="--i:2;">o</span>
+        <span style="--i:3;">a</span>
+        <span style="--i:4;">d</span>
+        <span style="--i:5;">i</span>
+        <span style="--i:6;">n</span>
+        <span style="--i:7;">g</span>
+        <span style="--i:8;">.</span>
+        <span style="--i:9;">.</span>
+        <span style="--i:10;">.</span>
+    </div>
+
+    <div class="container">
+        <span style="--i:1;">L</span>
+        <span style="--i:2;">o</span>
+        <span style="--i:3;">a</span>
+        <span style="--i:4;">d</span>
+        <span style="--i:5;">i</span>
+        <span style="--i:6;">n</span>
+        <span style="--i:7;">g</span>
+        <span style="--i:8;">.</span>
+        <span style="--i:9;">.</span>
+        <span style="--i:10;">.</span>
+    </div>
+
+    <div class="container">
+        <span style="--i:1;">L</span>
+        <span style="--i:2;">o</span>
+        <span style="--i:3;">a</span>
+        <span style="--i:4;">d</span>
+        <span style="--i:5;">i</span>
+        <span style="--i:6;">n</span>
+        <span style="--i:7;">g</span>
+        <span style="--i:8;">.</span>
+        <span style="--i:9;">.</span>
+        <span style="--i:10;">.</span>
+    </div>
+
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=m1ZKHPbnyjo&ab_channel=OnlineTutorials -->

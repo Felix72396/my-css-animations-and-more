@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background-color: rgb(19, 16, 16);
+            font-family: monospace;
+            color: #fff;
+        }
+
+        section{
+            position: relative;
+            margin: auto;        
+            width: 32rem;
+            height: 30rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: rgba(255, 255, 255, 0.379); */
+        }
+
+        span{
+            position: absolute;
+            width: 15rem;
+            height: 15rem;
+            border: 10px solid transparent;
+            border-top: 10px solid rgb(34, 244, 34);
+            border-radius: 50%;
+            
+            animation: rotate-left 3s linear infinite;
+            /* background-color: rgba(255, 255, 255, 0.379); */
+        }
+
+        span:nth-child(1){
+            top: 8%;
+            left: 25%
+        }
+
+        span::before{
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 2%;
+            width: 2rem;
+            height: 2rem;
+            background-color: rgb(34, 244, 34);
+            box-shadow: 0 0 0 .5rem rgba(34, 244, 34, 0.6),
+                        0 0 0 1rem rgba(34, 244, 34, 0.4),
+                        0 0 0 1.5rem rgba(34, 244, 34, 0.2),
+                        0 0 10rem 5rem rgba(34, 244, 34, 0.2);
+            border-radius: 50%;
+        }
+
+        span:nth-child(2){
+            top: 30%;
+            left: 33%;
+            border-top: 10px solid rgb(5, 238, 255);
+            animation-delay: -1.5s;
+   
+        }
+
+        span:nth-child(2)::before{
+            background-color: rgb(5, 238, 255);
+            box-shadow: 0 0 0 .5rem rgba(5, 238, 255, 0.6),
+                        0 0 0 1rem rgba(5, 238, 255, 0.4),
+                        0 0 0 1.5rem rgba(5, 238, 255, 0.2),
+                        0 0 10rem 5rem rgba(5, 238, 255, 0.2);
+        }
+
+        span:nth-child(3){
+            top: 30%;
+            left: 18%;
+            border-top: 10px solid rgb(255, 5, 205);
+            animation: rotate-right 3s linear infinite;
+            animation-delay: -.3s;
+        }
+
+        span:nth-child(3)::before{
+            position: absolute;
+            top: 10%;
+            left: 85%;
+            background-color: rgb(255, 5, 205);
+            box-shadow: 0 0 0 .5rem rgba(255, 5, 205, 0.6),
+                        0 0 0 1rem rgba(255, 5, 205, 0.4),
+                        0 0 0 1.5rem rgba(255, 5, 205, 0.2),
+                        0 0 10rem 5rem rgba(255, 5, 205, 0.2);
+        }
+
+        h2{
+            position: absolute;
+            font-size: 3rem;
+            bottom: 0;
+            letter-spacing: 5px;
+        }
+
+        @keyframes rotate-left {
+            100%{
+               transform: rotate(-1turn);
+            }
+        }
+
+        @keyframes rotate-right {
+            100%{
+               transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <span></span>
+        <span></span>
+        <span></span>
+        <h2>Loading...</h2>
+    </section>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=1Aq9OJuS3ok&list=PLcreRLzJrFACFfBUC-co_ybyy878fSpVT&index=10&t=27s&ab_channel=OnlineTutorials -->

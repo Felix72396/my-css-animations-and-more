@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Star</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: #fff;
+            display: flex;
+        }
+
+        div.container{
+            width: 10rem;
+            height: .1rem;
+            margin: auto;
+            position: relative;
+            
+            /* background-color: aqua; */
+            animation: change-color 20s linear infinite,
+                       spin 1s linear infinite;
+        }
+
+        div.container:nth-child(1){
+            animation: change-color 20s linear infinite,
+                       spin 10s linear infinite;
+        }
+
+        div.container:nth-child(2){
+            animation: change-color 20s linear infinite,
+                       spin 50s linear infinite;
+        }
+
+
+        div.container:nth-child(3) span{
+            border: 5px solid white;
+        }
+
+        div.container:nth-child(4) span{
+            border: 5px solid white;
+            box-shadow: 0 0 1rem 3px rgb(71, 255, 47),
+                        0 0 .1rem 10px rgb(71, 255, 47);
+                    
+        }
+
+        span{
+            /* border: 5px solid wheat; */
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 1rem 3px rgb(71, 255, 47),
+                        0 0 20rem 20px rgb(71, 255, 47);
+            background: rgb(115, 175, 195);
+            transform: rotate(calc(18deg * var(--i)));
+        }
+
+
+
+        @keyframes change-color {
+            0%{
+               filter: hue-rotate(0deg);
+            }
+
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            100%{
+                transform: rotate(1turn);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <section>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+        </section>
+    </div>
+
+    <div class="container">
+        <section>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+        </section>
+    </div>
+
+    <div class="container">
+        <section>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+        </section>
+    </div>
+
+    <div class="container">
+        <section>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+        </section>
+    </div>
+</body>
+</html>

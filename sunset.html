@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunset</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #191919;
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        div.container{
+            margin: auto;
+            width: 13rem;
+            height: 18rem;
+            border-radius: 7rem 7rem 1.5rem 1.5rem;
+            background-color: #f2ad43;
+            position: relative;
+            overflow: hidden;
+        }
+
+        span.sun{
+            position: absolute;
+            top: calc(50%);
+            left: calc(50% - 2.5rem);
+
+            z-index: 1;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            background-color: #fff58f;
+        }
+
+        span.mountain{
+            position: absolute;
+            background-color: #e08027;
+            width: 18rem;
+            height: 15rem;
+            border-radius: 50%;
+            bottom: -6rem;
+            z-index: 2;
+        }
+
+        span.mountain:nth-child(1){
+            left: -9rem;
+            transform: rotate(30deg);
+        }
+
+        span.mountain:nth-child(2){
+            background-color: #824820;
+            right: -9rem;
+            transform: rotate(-30deg);
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      
+        <span class="mountain"></span>
+        <span class="mountain"></span>
+        <span class="sun"></span>
+    </div>
+</body>
+</html>

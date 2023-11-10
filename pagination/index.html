@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        div{
+            height: auto;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 500px;
+            overflow: hidden;
+        }
+
+        div.pagination2{
+            bottom: 0;
+        }
+
+        a{
+            width: 3em;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-size: calc(.5em + 1vw);
+            font-weight: bold;
+            padding: .5em;
+            border: 1px solid white;
+            margin: .2em .1em;
+            opacity: .7;
+            font-family: sans-serif;
+            transition: all 1s;
+        }
+
+        a:hover{
+            width: 1em;
+            background-color: rgb(128, 124, 124);
+            transform: rotate(60deg);
+            font-size: calc(.5em + .3vw);
+
+        }
+
+        div.pagination2 a{
+            border: 0;
+            margin: 0;
+        }
+
+        div.pagination2 a:hover{
+            background-color: black;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pagination">
+        <a href="#<<"><<</a>
+        <a href="#1">1</a>
+        <a href="#2">2</a>
+        <a href="#3">3</a>
+        <a href="#4">4</a>
+        <a href="#5">5</a>
+        <a href="#>>">>></a>
+    </div>
+
+    <div class="pagination2">
+        <a href="#<<"><<</a>
+        <a href="#1">1</a>
+        <a href="#2">2</a>
+        <a href="#3">3</a>
+        <a href="#4">4</a>
+        <a href="#5">5</a>
+        <a href="#>>">>></a>
+    </div>
+</body>
+
+</html>

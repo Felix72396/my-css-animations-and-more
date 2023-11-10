@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Sky</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        *::before, *::after{
+            content: "";
+            position: absolute;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            color: #fff;
+            display: flex;
+        }
+
+        div.container {
+            position: relative;
+            margin: auto;
+            width: 15em;
+            min-width: 15em;
+           
+            aspect-ratio: 1;
+            background-color: rgb(42, 45, 88);
+            font-size: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        div.container::before, div.container::after {
+            transform: rotate(7deg);
+            width: 15em;
+            height: 5em;
+            background-color: rgb(13, 6, 28);
+            top: 80%;
+            left: 0%;
+        }
+
+        div.container::after {
+            width: 6em;
+            height: 8em;
+            transform: rotate(-40deg);
+            background-color: rgba(96, 127, 227, 0.161);
+            top: 40%;
+            left: 0%;
+            z-index: -1;
+            box-shadow: 1.575em 2.825em 0 rgba(96, 127, 227, 0.161),
+            5.785em 10.125em 0 rgba(96, 127, 227, 0.161);
+        }
+
+        span{
+            position: absolute;    
+        }
+
+        span.shooting-star{
+            background-color: rgba(250, 250, 251, 0.709);
+            transform: translate(-50%, -50%) rotate(45deg);
+            left: 0;
+            top: 0;
+            width: .1em;
+            height: 2em;
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes fall {
+            0%{
+                left: 100%;
+                top: 0;
+            }
+            6%, 100%{
+                left: -40%;
+                top: 150%;
+            }
+            
+        }
+
+        span.moon, span.star{
+            transform: translate(-50%, -50%);
+            left: 32%;
+            top: 22%;
+            background-color: rgb(234, 238, 225);
+            box-shadow: 0 0 0 .4em rgb(42, 90, 144),
+            0 0 0 .7em rgba(42, 90, 144, 0.658),
+            0 0 0 1em rgba(42, 90, 144, 0.31);
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+        }
+
+        span.star{
+            box-shadow: none;
+            width: calc(.05em + calc(var(--i) * 0.002em));
+            height:  calc(.05em + calc(var(--i) * 0.002em));
+            left: 12%;
+            top: 22%;
+            z-index: -1;
+            animation: twinkle 3s steps(3) infinite;
+            animation-delay: calc(-0.5s * var(--i));
+        }
+
+        span.star.item2{
+            left: 28%;
+            top: 42%;
+        }
+
+        span.star.item3{
+            left: 48%;
+            top: 12%;
+        }
+
+        span.star.item4{
+            left: 78%;
+        }
+
+        span.star.item5{
+            left: 55%;
+            top: 32%;
+        }
+
+        span.star.item6{
+            left: 78%;
+            top: 32%;
+        }
+
+        span.star.item7{
+            left: 58%;
+            top: 52%;
+        }
+
+        span.star.item8{
+            left: 88%;
+            top: 42%;
+        }
+
+        span.star.item9{
+            left: 68%;
+            top: 57%;
+        }
+
+        @keyframes twinkle {
+            0%, 100%{
+                background-color: rgba(234, 238, 225, 0.592);
+                box-shadow: 0 0 0 rgb(234, 238, 225);
+            }
+            50%{
+                background-color: rgb(234, 238, 225);
+                box-shadow: 0 0 .2em rgb(234, 238, 225);
+            }
+        }
+
+        span.moon::before, span.moon::after{
+            left: 15%;
+            top: 22%;
+            width: .5em;
+            height: .5em;
+            background-color: rgb(224, 229, 213);
+            box-shadow: .5em 0 .7em rgb(255, 247, 4);
+            border-radius: 50%;
+        }
+
+        span.moon::after{
+            left: 32%;
+            top: 62%;
+            width: .3em;
+            height: .3em;
+        }
+
+        span.tree{      
+            transform: translate(-50%, -50%);
+            left: 22%;
+            top: 69%;
+            width: 1em;
+            height: 1em;
+            border: .5em solid transparent;
+            border-bottom:  2em solid rgb(13, 6, 28);
+        }
+
+        span.tree.item2{
+            left: 26%;
+            top: 72%;
+        }
+
+        span.windmill{
+            width: .8em;
+            height: 1.5em;
+            background-color: rgb(13, 6, 28);
+            transform: translate(-50%, -50%);
+            left: 69%;
+            top: 78%;
+            border-radius: 1em 1em 0 0;
+            isolation: isolate;
+        }
+
+        span.windmill::before{
+            background-color: rgba(96, 127, 227, 0.274);
+            width: 30%;
+            height: 25%;
+            left: 32%;
+            top: 65%;
+            z-index: -1;
+        }
+
+        span.windmill::after{
+            background-color: rgba(255, 251, 0, 0.998);
+                filter: blur(.5px);
+            width: 20%;
+            height: 15%;
+            left: 40%;
+            top: 30%;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        span.propeller{
+            position: absolute;
+            background-color: rgb(13, 6, 28);
+            width: .5em;
+            height: .5em;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 0%;
+            animation: spin 3s linear infinite;
+        }
+
+        span.propeller::before, span.propeller::after{
+            width: 1.8em;
+            height: .3em;
+            background-color: rgb(13, 6, 28);
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            border-radius: 0 1em;
+        }
+
+        span.propeller::after{
+            transform: rotate(90deg);
+            left: -120%;
+            top: 20%;
+        }
+
+        @keyframes spin {
+            100%{
+                transform: translate(-50%, -50%) rotate(1turn);
+            }
+        }
+
+        @media (max-width:600px) {
+            div.container{
+                font-size: 25px;
+            }
+        }
+
+        @media (max-width:400px) {
+            div.container{
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width:300px) {
+            div.container{
+                font-size: 15px;
+            }
+
+            span.star{
+                width: calc(.08em + calc(var(--i) * 0.002em));
+                height:  calc(.08em + calc(var(--i) * 0.002em));
+            }
+        }
+
+        @media (max-width:230px) {
+            div.container{
+                font-size: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="shooting-star"></span>
+        <span class="star item1" style="--i:1;"></span>
+        <span class="star item2" style="--i:2;"></span>
+        <span class="star item3" style="--i:3;"></span>
+        <span class="star item4" style="--i:4;"></span>
+        <span class="star item5" style="--i:5;"></span>
+        <span class="star item6" style="--i:6;"></span>
+        <span class="star item7" style="--i:7;"></span>
+        <span class="star item8" style="--i:8;"></span>
+        <span class="star item9" style="--i:9;"></span>
+
+        <span class="moon"></span>
+        <span class="tree"></span>
+        <span class="tree item2"></span>
+
+        <span class="windmill">
+            <span class="propeller"></span>
+        </span>
+      
+    </div>
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=CbPf9lXqLjM&ab_channel=CodingArtist -->

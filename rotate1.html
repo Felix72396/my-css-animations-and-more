@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotate</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #442559;
+            display: flex;
+
+        }
+
+        div.container {
+            position: relative;
+          
+            width: 30rem;
+            height: 30rem;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+           
+            transform: rotate(calc(36deg * var(--i)));
+            animation: spin 5s linear infinite;
+        }
+
+        span::before{
+            content: "";
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            /* border-radius: 50%; */
+            border: 2px solid aliceblue;
+        }
+
+        @keyframes spin {
+            100%{
+                transform: rotate(5turn);
+            }
+        
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+    </div>
+
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=waY55vGtUyo&ab_channel=OnlineTutorials -->

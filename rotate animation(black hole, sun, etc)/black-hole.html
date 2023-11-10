@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+
+            background-color: rgb(0, 0, 0);
+        }
+
+        div.container{
+            margin: auto;
+            /* background-color: red; */
+            width: 25rem;
+            height: 25rem;
+            border-radius: 50%;
+            position: relative;
+            animation: spin 5s linear infinite;
+        }
+
+        div.container div:not([class="hole"]){
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            transform: scale(2);
+            background-color: rgba(255, 85, 0, 0.852);
+            /* box-shadow: 0 0 1rem 1rem rgba(239, 145, 3, 0.598); */
+            filter: blur(30px);
+            border-radius: 50%;
+            animation: grow 3s linear infinite;
+        }
+
+        div.container div:nth-child(1){
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        div.container div:nth-child(2){
+            right: 15%;
+            top: 18%;
+            transform: translateY(-25%);
+        }
+
+        div.container div:nth-child(3){
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        
+        div.container div:nth-child(4){
+            right: 15%;
+            top: 78%;
+            transform: translateY(-50%);
+        }
+
+          
+        div.container div:nth-child(5){
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        div.container div:nth-child(6){
+            left: 15%;
+            top: 78%;
+            transform: translateY(-50%);
+        }
+
+        div.container div:nth-child(7){
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        div.container div:nth-child(8){
+            left: 15%;
+            top: 18%;
+            transform: translateY(-25%);
+        }
+
+        div.container div:nth-child(9){
+            width: 20%;
+            height: 20%;
+            padding: 3rem;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            box-shadow: 0 0 10rem 5rem rgb(255, 136, 0);
+            background-size: 400%;
+            z-index: -1;
+            position: absolute;
+            filter: blur(4px);
+            animation: blur 5s ease infinite;
+        }
+
+        @keyframes spin 
+        {
+            100%{
+                transform: rotate(1turn);
+            }
+        }
+
+       @keyframes grow {
+        0%{
+           transform: scale(1.5);
+        }
+        50%{
+            transform: scale(2.5);
+        } 
+        100%{
+            transform: scale(1.5);
+        }
+    
+       }
+
+       @keyframes blur {
+        0%{
+            filter: blur(20px);
+        }
+        100%{
+            filter: brightness(1) blur(4px);
+        }
+        0%{
+            filter: blur(20px);
+        }
+       }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="hole"></div>
+    </div>
+</body>
+</html>

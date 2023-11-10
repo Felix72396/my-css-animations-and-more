@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div{
+        width: 30rem;
+        height: 30rem;
+        background-image: url("sunset.jpg");
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        user-select: none;
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        position: absolute;
+        text-align: justify;
+        background-color: rgba(0,0,0, .3);
+    }
+
+    .div1 p{
+        top: 100%;
+        width: calc(100% - 10rem);
+        height: calc(100% - 10rem);
+        padding: 5rem;
+        transition: .5s all ease;
+    }
+
+    .div1:hover p{
+        top: 0%;
+        
+    }
+
+    .div2 p{
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        transition: .7s all ease;
+    }
+
+    .div2:hover p{
+        opacity: 1;
+        padding: 5rem;
+        width: calc(100% - 10rem);
+        height: calc(100% - 10rem);
+        visibility: visible;
+      
+    }
+</style>
+
+<body>
+    <div class="div1">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloremque pariatur maxime corporis, provident
+            impedit! Atque dolores deleniti illum a ullam commodi! Voluptatibus, iusto natus sit aliquam magni
+            doloremque. Deleniti.</p>
+    </div>
+
+    <div class="div2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloremque pariatur maxime corporis, provident
+            impedit! Atque dolores deleniti illum a ullam commodi! Voluptatibus, iusto natus sit aliquam magni
+            doloremque. Deleniti.</p>
+    </div>
+</body>
+
+</html>

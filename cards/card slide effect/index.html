@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Slide Effect</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .card {
+            width: 6%;
+            height: auto;
+            background: linear-gradient(to right, rgb(48, 37, 130), rgb(147, 156, 216));
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+            transition: all ease .5s;
+            padding: 1rem;
+            margin: 5rem auto;
+        }
+
+        .card:hover {
+            width: 12%;
+            background: linear-gradient(to right, rgb(147, 156, 216), rgb(48, 37, 130));
+            overflow: visible;
+        }
+
+        .card:hover img {
+            left: 70%;
+        }
+
+        img {
+            width: 7rem;
+            height: 100%;
+            transform: translateX(0);
+            transition: all ease .3s;
+            position: relative;
+            left: 0;
+        }
+
+        .text-container {
+            position: absolute;
+            left: 100%;
+            width: 70%;
+            transition: all ease .2s;
+        }
+
+        .card:hover .text-container {
+            left: 0;
+        }
+
+        .text-container h3,
+        p {
+            padding: 0 .5rem;
+            color: white;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="text-container">
+            <h3>Goku</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa veniam accusantium, eligendi dicta
+                laboriosam.</p>
+        </div>
+        <img src="goku.png" alt="">
+    </div>
+</body>
+
+</html>

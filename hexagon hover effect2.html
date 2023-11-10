@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagon Hover Effect</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(0, 0, 0);
+          
+            display: flex;
+            flex-direction: column;
+ 
+            overflow: hidden;
+         
+        }
+
+        div.hexagon-row{
+            width: 120%;
+            height: 7rem;
+            position: absolute;
+            display: flex;
+            z-index: 2;
+            white-space: nowrap;
+        }     
+
+        div.hexagon-row:nth-child(even){
+           left: 3rem;
+        }
+
+        section.hexagon-container{
+            cursor: pointer;
+            width: 6rem;
+            height: 7rem;
+            
+            display: grid;
+            place-items: center;
+            position: relative;
+            
+        
+            margin-inline: 49px;
+            /* overflow: hidden; */
+            isolation: isolate;
+           
+        }
+
+        div.hexagon-row:hover{
+            z-index: 1;
+        }
+
+        section.hexagon-container:hover{
+            z-index: -1;
+           
+        }
+
+        section.hexagon-container::before{
+            content: "";
+            position: absolute;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);        
+        }
+
+        section.hexagon-container:hover::before{
+            transition: 0s;
+            box-shadow: 0 0 5rem 8rem rgb(4, 255, 4);
+            cursor: pointer;
+            z-index: -1;
+        }
+
+        span{
+            background-color: rgb(42, 40, 40);
+            width: 6rem;
+            height: 3.5rem;
+            position: absolute;
+            transition: 1s;
+        }
+
+        span.rectangle1{
+            height: 3.5rem;
+            width: 6rem;
+            
+            /* opacity: 0.5; */
+        }
+
+        span.rectangle2{
+            transform: rotate(60deg);
+        }
+
+        span.rectangle3{
+            transform: rotate(-60deg);
+        }
+
+        
+
+       
+    </style>
+</head>
+
+<body>
+    <script>
+        for (let row_n = 0; row_n < 15; row_n++) {
+            var row = "<div class='hexagon-row'>";
+            for (let column_n = 0; column_n < 21; column_n++) 
+            {
+                row += '<section class="hexagon-container"><span class="rectangle1"></span><span class="rectangle2"></span><span class="rectangle3"></span></section>';   
+            }
+            row += '</div>';
+            document.body.innerHTML+= row;
+        }
+
+        var rows = document.getElementsByTagName("div");
+        var py = -3;
+        for (let index = 0; index < rows.length; index++) {
+            
+            rows[index].style.transform=`translate(-5rem, ${py}rem)`;
+            py+=5.3;
+        }
+    </script>
+</body>
+
+</html>
+
+<!--  -->

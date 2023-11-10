@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+            --gradient: linear-gradient(to left, #bbeae3, #F8F9FB, #d8a5c9);
+            --gradient2: linear-gradient(to left, #bbeae3, #F8F9FB, #d8a5c9, rgb(212, 127, 127), rgb(57, 57, 144), rgb(85, 199, 85));
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        div{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 5rem;
+            margin: auto;
+            background-image: var(--gradient);
+            /* transition: 1s all ease-in; */
+        }
+
+        div:nth-child(1){
+            background-size: 500%;
+            animation: moving-background1 5s ease-in-out infinite;
+        }
+
+        
+        div:nth-child(2){
+            background-size: 2000%;
+            background-image: var(--gradient2);
+  
+            background-position: left;
+            animation: moving-background2 20s ease-in-out infinite;
+        }
+
+        @keyframes moving-background1 {
+            0%{
+                background-size: 500%;
+            }
+            50%{
+                background-size: 100%;
+            }
+            100%{
+                background-size: 500%;
+            }
+        }
+
+        @keyframes moving-background2 {
+            0%{
+                background-position: left;
+            }
+            50%{
+                background-position: right;
+            }
+            100%{
+                background-position: left;
+            }
+        }
+
+        label{
+            font-size: 5rem;
+            font-weight: bolder;
+            background: linear-gradient(to right, rgb(144, 201, 229) 40%, rgb(222, 213, 213) 40%, rgb(222, 213, 213) 45%, rgba(255, 192, 203, 0.849) 45%, rgba(255, 192, 203, 0.849) 100%);
+            background-size: 200%;
+            background-position: left;
+            margin: 0;
+            background-clip: text;
+            color: transparent;
+            animation: moving-background-letter 10s ease-in-out infinite;
+        }
+
+        label.second{
+            font-size: 5rem;
+            font-weight: bolder;
+            background: linear-gradient(to right, rgb(144, 201, 229) 40%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 41%, rgb(255, 192, 203) 41%, rgba(255, 192, 203, 0.849) 100%);
+            background-size: 200%;
+            background-position: left;
+            margin: 0;
+            background-clip: text;
+            color: transparent;
+            animation: moving-background-letter 10s ease-in-out infinite;
+        }
+
+        label.third{
+            font-size: 5rem;
+            font-weight: bolder;
+            background: linear-gradient(to right, rgb(144, 201, 229) 33%, rgba(255, 255, 255, 0.719) 35%, rgb(255, 255, 255) 60%, rgb(255, 192, 203) 61%, rgba(255, 192, 203, 0.849) 100%);
+            background-size: 300%;
+            background-position: 50%;
+            margin: 0;
+            background-clip: text;
+            color: transparent;
+            animation: moving-background-letter2 10s ease-in-out infinite;
+        }
+
+        label.forth{
+            font-size: 5rem;
+            font-weight: bolder;
+            background: linear-gradient(to right, rgb(144, 201, 229) 49.99%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.678) 50%, rgb(255, 192, 203) 50.1%, rgba(255, 192, 203, 0.849) 100%);
+            background-size: 200%;
+            background-position: 0%;
+            margin: 0;
+            background-clip: text;
+            color: transparent;
+            animation: moving-background-letter3 10s ease-in-out infinite;
+        }
+
+        label.fifth{
+            font-size: 5rem;
+            font-weight: bolder;
+            background: linear-gradient(to right, rgb(144, 201, 229) 49%, rgba(164, 207, 211, 0.758), rgb(144, 201, 229) 50.2%, rgb(144, 201, 229) 100%);
+            background-size: 200%;
+            background-position: 0%;
+            margin: 0;
+            background-clip: text;
+            color: transparent;
+            animation: moving-background-letter4 3s ease-in-out infinite;
+        }
+
+        @keyframes moving-background-letter {
+            0%{
+                background-position: 0%;
+            }
+            50%{
+                background-position: 100%;
+            }
+            100%{
+                background-position: 0%;
+            }
+        }
+
+        @keyframes moving-background-letter2 {
+            0%{
+                background-position: 30%;
+            }
+            50%{
+                background-position: 100%;
+            }
+            100%{
+                background-position: 0%;
+            }
+        }
+
+        @keyframes moving-background-letter3 {
+            0%{
+                background-position: 61%;
+            }
+            50%{
+                background-position: 100%;
+            }
+            100%{
+                background-position: 0%;
+            }
+        }
+
+        @keyframes moving-background-letter4 {
+            0%{
+                background-position: 61%;
+            }
+            100%{
+                background-position: 100%;
+            }
+            /* 100%{
+                background-position: 0%;
+            } */
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <label for="">BACKGROUND</label>
+    <label class="second" for="">BACKGROUND</label>
+    <label class="third" for="">BACKGROUND</label>
+    <label class="forth" for="">BACKGROUND</label>
+    <label class="fifth" for="">BACKGROUND</label>
+    <button>fdfd</button>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=kwrgKJzsgGE&ab_channel=DarkCode -->
+
+<!-- https://www.youtube.com/watch?v=f3mwKLXpOLk&t=2s&ab_channel=KevinPowell -->

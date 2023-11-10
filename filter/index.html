@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            background-color: rgb(5, 4, 15);
+        }
+
+        div.container{
+            margin: auto;
+            width: 40%;
+            height: 25rem;
+            position: relative;
+        }
+
+        img{
+            width: 10rem;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        img:nth-child(1):hover{
+            filter: blur(10px);
+        }
+
+        img:nth-child(2):hover{
+            filter: brightness(5);
+        }
+
+        img:nth-child(3):hover{
+            filter: brightness(100) blur(5px);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+      <img src="mulan.jpg" alt="">
+      <img src="mulan.jpg" alt="">
+      <img src="mulan.jpg" alt="">
+    </div>
+</body>
+</html>

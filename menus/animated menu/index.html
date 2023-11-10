@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+
+        header{
+            width: 100%;
+            height: auto;
+        }
+
+        header div{
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .img-logo{
+            width: 80px;
+            cursor: pointer;
+        }
+
+        header button{
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+        }
+
+        header button:hover{
+            background-color: rgb(36, 35, 35);
+        }
+
+
+        header button img{
+            width: 100%;
+        }
+
+        header nav{
+            width: 100%;
+            height: auto;
+            clip-path: circle(0% at top right);
+            transition: clip-path .7s;
+        }
+
+        header ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            
+            background-color: rgb(66, 62, 62);
+            width: 100%;
+        }
+
+        .clip-path-150-percent{
+            clip-path: circle(150% at top center)
+        }
+
+        .make-invisible{
+            display: none;
+        }
+
+        header nav li{
+            width: auto;
+            height: auto;
+            margin: 1em 0;
+        }
+
+        header nav li a{
+            color: white;
+            padding: 1em;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:target{
+            clip-path: circle(0% at top left);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="img-logo" src="tree.png" alt="">
+            <button id="btn-bars"  type="button"><img class="img-bars" src="bars.png" alt=""></button>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="#home1">home1</a></li>
+                <li><a href="#home2">home2</a></li>
+                <li><a href="#home3">home3</a></li>
+                <li><a href="#home4">home4</a></li>
+                <li><a href="#home5">home5</a></li>
+                <li><a href="#home6">home6</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            const btn_bars = document.getElementById("btn-bars");
+            const nav = document.getElementById("nav");
+
+            const a_array = document.querySelectorAll("header nav a");
+            btn_bars.addEventListener("click", function(){
+                nav.classList.toggle("clip-path-150-percent");
+                // nav.classList.toggle("make-invisible");
+            });
+
+            a_array.forEach(function(a) {
+                a.addEventListener("click", function(){
+                    nav.classList.toggle("clip-path-150-percent");
+                });
+            });
+        </script>
+    </header>
+</body>
+</html>

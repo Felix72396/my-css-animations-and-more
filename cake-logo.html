@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Logo</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background-color: #191919;
+        }
+
+        div.cake{
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            background-color: #4f77ff;
+            margin: auto;
+            position: relative;
+        }
+
+        div.piece-of-cake{
+            width: 10rem;
+            height: 20rem;
+            background-color: #f9e492;
+            position: absolute;
+            top: 50%;
+            overflow: hidden;
+        }
+
+        div.piece-of-cake::before{
+            content: "";
+            position: absolute;
+            top: -50%;
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            background-color: #9ad5ff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cake">
+        <div class="piece-of-cake">
+
+        </div>
+    </div>
+</body>
+</html>

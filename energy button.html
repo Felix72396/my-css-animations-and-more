@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Button</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #17131a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        div.container {
+            position: relative;
+          
+            width: auto;
+            height: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #17131a;
+            border: 5px solid rgb(0, 255, 0);
+          
+        }
+
+        div.container:hover{
+            animation: shine .4s forwards;
+            animation-delay: 1.2s;
+        }
+
+        div.container:hover a{
+            animation: letter-color 1s forwards;
+            animation-delay: 1.3s;
+        }
+
+     
+        div.container::before{
+            content: "";
+            position: absolute;
+            width: 3rem;
+            height: .3rem;
+          
+            top: 50%;
+            left: -3rem;
+
+            background-color: rgb(0, 255, 0);
+            box-shadow: 1rem 1.6rem 0 0 rgb(0, 255, 0),
+                        1rem -1.6rem 0 0 rgb(0, 255, 0);
+        }
+
+        div.container::after{
+            content: "";
+            position: absolute;
+            width: 3rem;
+            height: .3rem;
+          
+            top: 50%;
+            right: -3rem;
+
+            background-color: rgb(0, 255, 0);
+            box-shadow: -1rem 1.6rem 0 0 rgb(0, 255, 0),
+                        -1rem -1.6rem 0 0 rgb(0, 255, 0);
+        }
+
+        div.container:hover::before, div.container:hover::after{
+            width: 50%;
+            transition: .3s all;
+            animation: fill-color .5s forwards;
+            animation-delay: .7s;
+        }
+
+        div.container:hover::before{
+            left: 0;
+        }
+
+        div.container:hover::after{
+            right: 0;
+        }
+
+        a{
+            text-decoration: none;
+           
+            font-size: 4em;
+            padding: 1.8rem 4rem;
+            color: #fff;
+            z-index: 1;
+        }
+
+
+        @keyframes fill-color {
+            100%{
+                top: 0;
+                height: 100%;
+                box-shadow: 0rem 0 0 0 rgb(0, 255, 0),
+                        0rem 0 0 0 rgb(0, 255, 0);
+            }
+        }
+
+        @keyframes shine {
+            100%{
+               box-shadow: 0rem 0rem 8rem .5rem rgb(0, 255, 0),
+                           0rem 0rem 10rem 1rem rgb(0, 255, 0),
+                           0rem 0rem 15rem 2rem rgb(0, 255, 0);
+            }
+        }
+
+        @keyframes letter-color {
+            50%, 100%{
+               color: black;
+            }
+        }
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+     <a href="#">READ MORE</a>
+        
+    </div>
+   
+</body>
+
+</html>
+
+<!--https://www.youtube.com/watch?v=Q4ta_NZOYwE&ab_channel=OnlineTutorials -->

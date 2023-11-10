@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinning Text Effect</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(0, 0, 0);
+            font-family: monospace;
+            display: flex;
+        }
+
+        div.container {
+            display: flex;
+            flex-direction: row-reverse;
+            margin: auto;
+            position: relative;
+    
+        }
+
+        label{
+            background: linear-gradient(to right, transparent,white 20%, white 60%, transparent);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: 120rem;
+            font-size: 10rem;
+            background-clip: text;
+            color: transparent;
+            animation: animate 5s linear infinite;
+        }
+
+        @keyframes animate {
+            0%, 100%{
+                background-position: 120rem;
+            }
+            50%{
+                background-position: -120rem;
+            }
+        }
+
+  
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label>SHINNING TEXT EFFECT</label>
+    </div>
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=C8paSmVFsVE&ab_channel=OnlineTutorials -->

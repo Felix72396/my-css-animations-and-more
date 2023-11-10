@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Position</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(19, 18, 18);
+            overflow: hidden;
+        }
+
+        span{
+            position: absolute;
+            display: block;
+            width: 3px;
+            aspect-ratio: 1;
+            background-color: rgb(24, 175, 59);
+            border-radius: 50%;
+        }
+
+        .animate{
+            animation: animate 10s ease-in;
+        }
+
+        @keyframes animate {
+          
+            50%{
+                transform: rotate(10turn) scale(var(--size)) translate(var(--rdX), var(--rdY));
+                /* left: var(--rdX);
+                top: var(--rdY); */
+                opacity: .5;
+                background-color: rgb(133, 40, 6);
+                box-shadow: 0 0 10px 2rem #3c453b0d;
+
+      
+            }
+            98%, 10%{
+                border-radius: 100% 0 100% 0;
+            }
+            100%, 0%{
+                background-color: rgb(208, 205, 36);
+                box-shadow: none;
+               
+                display: none;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <script>
+        let x,y;
+        document.body.addEventListener("mousemove", (e) => {
+            document.title = `x:${e.clientX}; y:${e.clientY};`;
+            x = e.clientX;
+            y = e.clientY;
+            let span = document.createElement("span");
+          
+          span.style.left = `${x}px`;
+          span.style.top = `${y}px`;
+          document.body.appendChild(span);
+            // const mouseXPos = event.clientX; // Posición X del mouse en relación al área visible del navegador
+            // const mouseYPos = event.clientY; // Posición Y del mouse en relación al área visible del navegador
+
+            // const pageXPos = event.pageX; // Posición X del mouse en relación al documento completo
+            // const pageYPos = event.pageY; // Posición Y del mouse en relación al documento completo
+
+      
+            const spans = document.getElementsByTagName("span");
+            for (const sp of spans) 
+            {
+                
+                sp.style.setProperty("--rdX", `${getRandomNumber()}px`);
+                sp.style.setProperty("--rdY", `${getRandomNumber()}px`);
+                sp.style.setProperty("--size", Math.floor(Math.random() * 30));
+
+                setTimeout(()=>{
+                    sp.className = "animate";
+                }, 3000)
+                setTimeout(()=>{
+                    document.body.removeChild(sp);
+                 }, 10000);
+            }  
+        });
+
+        function getRandomNumber()
+        {
+            const flag = Math.floor(Math.random() * 2) === 0;
+            console.log(flag)
+            let n = Math.random() * 10;
+            if(flag)
+               n = n * (- 1);
+            return n;
+        }
+        // document.body.onclick = (e)=>{
+        //     let span = document.createElement("span");
+          
+        //     span.style.left = `${x}px`;
+        //     span.style.top = `${y}px`;
+        //     document.body.appendChild(span);
+           
+        // }
+    </script>
+</body>
+</html>

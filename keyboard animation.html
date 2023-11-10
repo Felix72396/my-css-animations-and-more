@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard animation</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+
+        div.keyboard-box{
+            width: auto;
+            /* padding: 0 1rem; */
+            height: 120px;
+            /* background-color: rgb(130, 120, 120); */
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        div.keyboard-box:hover span{
+            transition: 1s all;
+            transform: translate(calc(1rem * var(--x)), calc(1rem * var(--y))) rotate(calc(1deg * var(--deg)));
+        }
+
+
+
+        section{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 50%;
+        }
+
+        section:nth-child(1){
+            margin-bottom: .5rem;
+        }
+
+        span{
+            background-color: #FDD835;
+            position: relative;
+            height: 100%;
+            aspect-ratio: 1;
+            display: grid;
+            place-content: center;
+            border-radius: 5px;
+            box-shadow: 0 -2px 0 rgb(247, 125, 10) inset;
+            transition: 3s all;
+        }
+
+        span.space-bar{
+            width: 12rem;
+        }
+
+        span.space, span.space-bar{
+            background-color: #FFC107;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="keyboard-box">
+        <section>
+            <span style="--deg:1; --x:-3; --y:-3;">L</span>
+            <span style="--deg:2; --x:-4; --y:1;">E</span>
+            <span style="--deg:5; --x:-1; --y:-1;">A</span>
+            <span style="--deg:15; --x:-9; --y:-3;">R</span>
+            <span style="--deg:20; --x:1; --y:1;">N</span>
+            <span style="--deg:35; --x:-8; --y:-5;" class="space-bar"></span>
+        </section>
+        <section>
+            <span style="--deg:45; --x:0; --y:2;">C</span>
+            <span style="--deg:-5; --x:7.5; --y:7.5;">S</span>
+            <span style="--deg:-7; --x:-1; --y:-1;">S</span>
+            <span style="--deg:-1; --x:8; --y:8;" class="space"></span>
+            <span style="--deg:-35; --x:-1; --y:-5;">F</span>
+            <span style="--deg:-42; --x:6; --y:6;">É</span>
+            <span style="--deg:-14; --x:5; --y:9;">L</span>
+            <span style="--deg:-18; --x:4; --y:0;">I</span>
+            <span style="--deg:-7; --x:3; --y:3;">X</span>     
+        </section>
+    </div>
+</body>
+</html>

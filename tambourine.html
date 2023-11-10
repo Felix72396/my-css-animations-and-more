@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambourine</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: #6592cf;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        div.tambourine-box{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: auto;
+            display: flex;  
+            align-items: center;
+        }
+
+        div.tambourine-circle{
+            width: 17rem;
+            aspect-ratio: 1;
+            border: 1rem solid #243d83;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center; */
+            overflow: hidden;
+        }
+
+        div.tambourine-circle div.big-circle{
+            height: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+
+        div.tambourine-circle > div.big-circle .circle{
+            background-color: #6592cf;
+            width: 10rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+       
+            position: absolute;
+            border: 1rem solid #243d83;
+            bottom: -7rem;
+        }
+
+        div.tambourine-circle > div.circle{
+            width: 5rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: #6592cf;
+            position: absolute;
+            border: 1rem solid #243d83;
+        }
+
+        div.tambourine-circle > div.circle::before{
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #243d83;
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        div.tambourine-circle > div.circle:nth-child(1){
+            top: -3rem;
+        }
+
+        div.tambourine-circle > div.circle:nth-child(2){
+            top: 1.2rem;
+            left: -1.6rem;
+        }
+
+        div.tambourine-circle > div.circle:nth-child(3){
+            top: 1.2rem;
+            right: -1.6rem;
+        }
+
+        div.tambourine-circle > div.circle:nth-child(4){
+            top: 9rem;
+            left: -2rem;
+        }
+
+        div.tambourine-circle > div.circle:nth-child(5){
+            top: 9rem;
+            right: -2rem;
+        }
+
+        div.tambourine-circle div.invisible-circle{
+            width: 10rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: #6592cf;
+            position: absolute;
+            bottom: -8.3rem;
+        }
+
+      
+    
+
+
+    </style>
+</head>
+<body>
+   <div class="tambourine-box">
+    <div class="tambourine-circle">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="big-circle">
+            <div class="circle"></div>
+        </div>
+        <div class="invisible-circle"></div>
+        
+    </div>
+   </div>
+</body>
+</html>
+<!-- https://www.youtube.com/watch?v=A0J-hB3kSQ4&ab_channel=KevinPowell -->

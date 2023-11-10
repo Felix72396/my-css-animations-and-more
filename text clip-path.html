@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Clip Path</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+           
+            color: #fff;
+            /* display: grid;
+            place-content: center; */
+            font-family: sans-serif;
+        }
+
+        section{
+            width: 100%;
+            height: 100%;
+            /* background-color: rgb(28, 26, 33); */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section .box1{
+            background-color: rgb(154, 48, 252);
+            color: #fff;
+        }
+
+        section .box2{
+            background-color: rgb(255, 255, 255);
+            color: rgb(154, 48, 252);
+            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+        }
+
+        h2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        h2 span:nth-child(2) {
+            font-size: 7rem;
+        }
+
+
+        div:nth-child(1) h2{
+            animation: animate 4s ease-in-out infinite;
+        }
+
+        div:nth-child(2) h2{
+            transform: translateY(7rem);
+            animation: animate2 4s ease-in-out infinite;
+        }
+
+        @keyframes animate {
+            0%, 45%{
+                transform: translateY(-7rem);
+            }
+            50%, 95%{
+                transform: translateY(10rem);
+            }
+            100%{
+                transform: translateY(-7rem);
+            }        
+        }
+
+        @keyframes animate2 {
+            0%, 45%{
+                transform: translateY(-10rem);
+            }
+            50%, 95%{
+                transform: translateY(7rem);
+            }
+            100%{
+                transform: translateY(-10rem);
+            }        
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+       <div class="box box1">      
+            <h2>
+                <span>Happy New Year</span>
+                <span>2022</span>
+            </h2>     
+       </div>
+
+       <div class="box box2">
+            <h2>
+                <span>Bye bye</span>
+                <span>2021</span>
+            </h2>  
+       </div>
+    </section>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=2xYN32DOGRE&ab_channel=OnlineTutorials -->

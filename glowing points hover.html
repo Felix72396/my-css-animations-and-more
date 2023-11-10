@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Background Points</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            /* background: rgb(47, 102, 231); */
+            font-family: monospace;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        
+            position: relative;
+            background-color: black;
+           
+        }
+
+        span{
+            width: 40px;
+            height: 32px;
+    
+            display: grid;
+            place-content: center;
+            position: relative;
+            
+        }
+
+        span:hover{
+            cursor: pointer;
+        }
+
+        span::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: rgb(9, 255, 0);
+            box-shadow: 0 0 1rem 1px rgb(9, 255, 0); 
+            z-index: 1;
+            transition: 2s;
+            animation: animate 30s linear infinite;
+        }
+
+        span:hover::before{
+            transition: 0s;
+            box-shadow: 0 0 .5rem 2px rgb(9, 255, 0); 
+            transform: translate(-50%, -50%) scale(8);
+        }
+
+        @keyframes animate {
+            0%{
+                filter: hue-rotate(0deg);
+            }
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+  
+    </style>
+</head>
+
+<body>
+    <script>
+        for (let index = 0; index < 1392; index++) {
+            document.body.appendChild(document.createElement("span")); 
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=StjmEh211Oc&ab_channel=OnlineTutorials -->

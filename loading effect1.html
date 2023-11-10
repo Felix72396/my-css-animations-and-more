@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Effect1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: rgb(71, 255, 47);
+            display: flex;
+            font-family: monospace;
+            font-size: 3rem;
+        }
+
+        div.container{
+            width: 20rem;
+            height: auto;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            animation: change-color 20s linear infinite;
+        }
+
+        section{
+            width: 500px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+      
+
+        label{
+            background: rgb(71, 255, 47);
+            color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+
+        span{
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+
+            box-shadow: 0 0 1rem 3px rgb(71, 255, 47),
+                        0 0 2rem 6px rgb(71, 255, 47),
+                        0 0 3rem 10px rgb(71, 255, 47);
+            background: rgb(0, 0, 0);
+            transform: scale(.1);
+            animation: change-size 1.5s linear infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+        section:nth-of-type(2) span{
+            animation-delay: calc(-0.1s * var(--i));
+        }
+      
+
+
+        @keyframes change-color {
+            0%{
+               filter: hue-rotate(0deg);
+            }
+
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        @keyframes change-size {
+            0%{
+               transform: scale(.1);
+            }
+            5%{
+                transform: scale(1);
+            }
+            50%, 100%{
+                transform: scale(.1);
+            }
+        }
+
+        /* @keyframes change-size2 {
+            0%, 50%{
+               transform: scale(.1);
+            }
+
+            100%{
+                transform: scale(1);
+            }
+        } */
+
+    </style>
+</head>
+<body>
+
+
+    
+
+   
+    
+    <div class="container">
+        <section>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+        </section>
+        <label>Loading...</label>
+        <section>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+        </section>
+    </div>
+    
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=ZZBGFMREntY&ab_channel=OnlineTutorials -->

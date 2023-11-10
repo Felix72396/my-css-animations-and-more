@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            display: flex;
+            background-color: #f9e492;
+        }
+
+        div.hand-container{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        div.palm, div.wrist, div.finger{
+            background-color: black;
+        }
+
+        div.finger-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 12rem;
+            margin-bottom: .3rem;
+         
+        }
+
+        div.finger{
+            width: calc(calc(100% / 4) - .3rem);
+            height: 7.5rem;
+            border-radius: 3rem;
+        }
+
+        div.finger:nth-child(1){
+            height: 6rem;
+        }
+
+        div.finger:nth-child(3){
+            height: 6.2rem;
+        }
+
+        div.finger:nth-child(4){
+            height: 5rem;
+        }
+
+        div.hand-container > div.finger{
+            position: absolute;
+            transform: rotate(65deg);
+            border: .5rem solid #f9e492;
+            box-sizing: content-box;
+            height: 7rem;
+            left: .3rem;
+            top: 3.8rem;
+        }
+
+
+        div.palm{
+            width: 12rem;
+            height: 4rem;
+            border-radius: 0 0 1rem 1rem;
+        }
+
+        div.wrist{
+            width: 6rem;
+            height: 5rem;
+            border-radius: 0 0 1rem 1rem;
+        }
+
+        .background{
+            background-image: linear-gradient(to left, #F2A65A, #772F1A, #ad6651);
+            animation: moving-background .005ms ease-in-out infinite;
+            background-size: 150%;
+            background-position: left;
+        }
+
+        .background2{
+            background-image: linear-gradient(to left, #F2A65A, #772F1A, #ad6651);
+            animation: moving-background .005ms ease-in-out infinite;
+            background-size: 50%;
+            background-position: left;
+        }
+
+        .background3{
+            background-image: linear-gradient(to left, #F2A65A, #772F1A, #ad6651);
+            animation: moving-background .005ms ease-in-out infinite;
+            background-size: 5%;
+            background-position: left;
+        }
+        
+        @keyframes moving-background {
+            0%{
+                background-position: left;
+            }
+            100%{
+                background-position: right;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hand-container">
+        <div class="finger background"></div>
+        <div class="finger-container">
+            <div class="finger background"></div>
+            <div class="finger background"></div>
+            <div class="finger background"></div>
+            <div class="finger background"></div>
+        </div>
+        <div class="palm background"></div>
+        <div class="wrist background"></div>
+    </div>
+
+    <div class="hand-container">
+        <div class="finger background2"></div>
+        <div class="finger-container">
+            <div class="finger background2"></div>
+            <div class="finger background2"></div>
+            <div class="finger background2"></div>
+            <div class="finger background2"></div>
+        </div>
+        <div class="palm background2"></div>
+        <div class="wrist background2"></div>
+    </div>
+
+    <div class="hand-container">
+        <div class="finger background3"></div>
+        <div class="finger-container">
+            <div class="finger background3"></div>
+            <div class="finger background3"></div>
+            <div class="finger background3"></div>
+            <div class="finger background3"></div>
+        </div>
+        <div class="palm background3"></div>
+        <div class="wrist background3"></div>
+    </div>
+</body>
+</html>

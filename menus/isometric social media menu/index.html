@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isometric Menu</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            /* background: linear-gradient(to bottom, #454651, #25252b); */
+            background-color: aliceblue;
+            display: flex;
+        }
+
+        ul{
+           position: relative;
+           transform: skewY(-15deg);
+           margin: auto;
+           list-style: none;
+           cursor: pointer;
+        }
+
+        li{
+            background-color: #3d3e3f;
+            position: relative;
+            transition: 2s color,
+            2s transform;
+            z-index: var(--i);
+        }
+
+        li:nth-child(even):hover {
+            transform: translateX(5rem);
+            background-color: #9696cb;  
+        }
+
+        li:nth-child(odd):hover {
+            transform: translateX(-5rem);
+            background-color: #9696cb;  
+        }
+
+        li:hover::before, li:hover::after{
+            background-color: #9696cb;
+            transition: 2s color;
+        }
+
+
+        li::before{
+            content: "";
+            position: absolute;
+            transform: skewY(41deg) rotateY(47deg);
+            width: 28%;
+            height: 100%;
+            top: -.8rem;
+            left: -23.1%;
+            filter: brightness(0.8);
+        }
+
+        li:nth-child(1)::before{
+            background: url(instagram.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-color: inherit; 
+        }
+
+        li:nth-child(2)::before{
+            background: url(linkedin.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-color: inherit;
+        }
+
+        li:nth-child(3)::before{
+            background: url(twiter.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-color: inherit;
+        }
+
+        li:nth-child(4)::before{
+            background: url(whatsapp.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-color: inherit;
+        }
+
+        li:nth-child(5)::before{
+            background: url(youtube.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-color: inherit;
+        }
+
+        li::after{
+            content: "";
+            position: absolute;
+            transform: skewX(49deg);
+            transform-origin: bottom;
+            width: 100%;
+            height: 43%;
+            top: -43%;
+            background-color: inherit;
+            filter: brightness(0.9);
+        }
+
+        a{
+            text-decoration: none;
+            width: 10rem;
+            padding: 1rem;
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li style="--i:5;"><a href="#instagram">Instagram</a></li>
+        <li style="--i:4;"><a href="#LinkedIn">LinkedIn</a></li>
+        <li style="--i:3;"><a href="#twitter">Twitter</a></li>
+        <li style="--i:2;"><a href="#whatsapp">WhatsApp</a></li>
+        <li style="--i:1;"><a href="#youtube">Youtube</a></li>
+    </ul>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=c2pbcpZJrTs&ab_channel=OnlineTutorials -->

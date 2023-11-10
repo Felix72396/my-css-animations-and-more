@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bell</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #191919;
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        div.container{
+            margin: auto;
+            width: 5rem;
+            height: 18rem;
+            background: linear-gradient(#f2ad43 50%, #824820 50%);
+            position: relative;
+            border-radius: 5rem;
+        }
+
+        div.container::before{
+            content: "";
+            position: absolute;
+            top: calc(50% - 35%);
+            left: calc(50% - 120%);
+            width: 240%;
+            height: 70%;
+            background-color: #e08027;
+            border-radius: 50% 50% .5rem .5rem;
+        }
+
+      
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+</body>
+</html>

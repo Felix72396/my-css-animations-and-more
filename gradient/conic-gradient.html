@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow border</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            background-color: rgb(5, 4, 15);
+        }
+
+        div{
+            position: relative;
+            margin: auto;
+            font-size: 3rem;
+            font-weight: bolder;
+            padding: 10rem;
+            background-color: black;
+            box-shadow: 12px 0 10px 0 rgb(6, 6, 27);
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        div:before{
+            content: "";
+            width: 150%;
+            height: 150%;
+            left: -25%;
+            top: -25%;
+            background: conic-gradient(#FF1B4A, #f78a04, #edd415, #46BC45, #27559f, #ce26ce, #F41F4E);
+            position: absolute;
+            transform: rotate(0deg);
+            /* transition: 1s all; */
+            animation: spin 2s infinite linear;
+            border-radius: 50%;
+        }
+
+        
+        div::after{
+            content: "RAINBOW";
+            left: 1rem;
+            right: 1rem;
+            top: 1rem;
+            bottom: 1rem;
+            background-color: black;
+            color: #fff;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        @keyframes spin {
+            /* 0%{
+                transform: rotate(0deg);
+            } */
+            100%{
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+<!-- https://www.youtube.com/watch?v=cJillURnY2U&ab_channel=CodingArtist -->

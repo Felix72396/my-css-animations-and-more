@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            word-break: break-all;
+        }
+
+        body {
+            background-color: #000;
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        main {
+            width: 80%;
+            height: auto;
+            margin: auto;
+        }
+
+        section {
+            padding: 24px 0;
+            border-bottom: 1px solid #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            padding: 16px 32px;
+            background: transparent;
+            font-weight: 700;
+            font-size: 24px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .gradient {
+            outline: 0;
+            border: 0;
+            background: linear-gradient(10deg, rgba(21, 129, 224, 0.863), rgba(105, 224, 105, 0.548), rgba(228, 244, 10, 0.772));
+            transition: all cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
+        }
+
+        button.gradient:hover {
+            cursor: pointer;
+            transform: translateY(-3px);
+            background: linear-gradient(10deg, rgba(119, 21, 224, 0.863), rgba(224, 151, 105, 0.548), rgba(10, 244, 33, 0.772));
+        }
+
+        button.gradient:active {
+            transform: translateY(0px);
+        }
+
+        a.link-gradient {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 2rem;
+            color: #fff;
+            position: relative;
+            padding: .2rem .5rem;
+            border-radius: 15px;
+        }
+
+        a.link-gradient:hover {
+            background: linear-gradient(10deg, rgba(21, 129, 224, 1), rgba(105, 224, 105, 1), rgba(228, 244, 10, 1));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        a.link-gradient::after {
+            content: "";
+            position: absolute;
+            /* width: 100%; */
+            height: 5px;
+            /* background: linear-gradient(to top right, rgba(29, 24, 168, 0.797), rgba(255, 192, 203, 0.779), rgba(16, 203, 16, 0.468)); */
+            background: linear-gradient(10deg, rgba(21, 129, 224, 0.863), rgba(105, 224, 105, 0.548), rgba(228, 244, 10, 0.772));
+            bottom: -2px;
+            left: 0;
+            right: 0;
+        }
+
+
+        p.text-gradient{
+            margin-top: 2rem;
+            color: #fff;
+            width: 50%;
+            background-color: rgb(73, 70, 70);
+            border-radius: 16px;
+            font-size: 16px;
+            padding: 1rem;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        p a.highlight-gradient{
+            text-decoration: none;
+            background: linear-gradient(20deg, rgb(73, 70, 70), rgb(105, 105, 211), rgb(73, 70, 70));
+            padding: .2rem;
+            border-radius: 5px;
+            color: #fff;
+            font-family: monospace;
+        }
+
+        p a.highlight-gradient:hover{
+            background: linear-gradient(10deg, rgb(73, 70, 70), rgb(164, 164, 241), rgb(73, 70, 70));
+        }
+
+        section p.callout-gradient{
+            color: #fff;
+            width: 51%;
+            background: linear-gradient(10deg, rgb(73, 70, 70), rgb(22, 22, 79), rgb(73, 70, 70));
+            border-radius: 25px;
+            font-size: 16px;
+            padding: 1rem;
+            line-height: 1.5;
+            text-align: justify;
+            margin: auto;
+            border: 10px solid black;
+            position: relative;
+        }
+
+        section p.callout-gradient::before{
+            content: "";
+            position: absolute;
+            top: -10px;
+            bottom: -11px;
+            left: -11px;
+            right: -11px;
+            background-color: rgb(141, 216, 216);
+            z-index: -1;
+            border-radius: 25px;
+        }
+
+        section p.callout-gradient::after{
+            content: "!!!";
+            position: absolute;
+            padding: .05rem .3rem;
+            border-radius: 50%;
+            background-color: #000;
+            color: #fff;
+            top: -20px;
+            left: 11px;
+        }
+
+        label{
+            margin-left: 2rem;
+            font-weight: bolder;
+            font-size: 5rem;
+            color: #fff;
+            background: url(sunset.jpg);
+            background-size: contain;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+           <div>
+            <button type="button" class="button outline">Register free</button>
+            <button type="button" class="button gradient">Get premium</button>
+            <a class="link-gradient" href="http://">Link</a>
+           </div>
+            <p class="text-gradient"><a class="highlight-gradient" href="#">Lorem</a> ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, eum ipsum id, distinctio cumque
+                minus consequatur eius dolore a commodi ratione deserunt, blanditiis obcaecati hic incidunt voluptatem
+                suscipit vel repudiandae!</p>
+        </section>
+
+        <section>
+            <p class="callout-gradient">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nihil saepe dolore odit aperiam, aliquid nobis sed possimus, aliquam dolorem, fuga quo. Est aliquid ex veniam deserunt voluptate velit esse.</p>
+        </section>
+    </main>
+    <label for="">WORD</label>
+</body>
+
+</html>
+<!-- https://www.youtube.com/watch?v=m30frh3KzLU&ab_channel=LaCocinadelC%C3%B3digo -->

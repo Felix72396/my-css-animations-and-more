@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #000;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+
+            color: rgb(239, 29, 162);
+        }
+
+        div.container{
+            position: relative;
+            width: 60%;
+            height: 40%;
+           
+        }
+
+        div.container div label{
+            position: absolute;
+            font-weight: 900;
+            font-size: 5rem;
+            
+            left: 50%;
+            top: 50%;
+            padding: 0;
+            /* display: block; */
+            transform: translate(-50%, -50%);
+          
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+            transition: .3s border,
+             .8s color;
+          
+        }
+
+        div.container div label:nth-child(1){
+            z-index: 1;
+        }
+
+        div.container div:hover label:nth-child(1){
+            height: 3rem;
+            top: 41.5%;
+            padding: 0 1rem;
+            font-size: 5.2rem;
+            color: white;
+            font-style:oblique;
+            border-bottom: 5px solid rgb(239, 29, 162);
+           
+            animation: skew .2s ease-in-out forwards;
+
+        }
+
+        div.container div:hover label:nth-child(2){
+            color: white;
+           
+            animation: skew .2s ease-in-out forwards;
+          
+            
+        }
+
+        @keyframes skew{
+            0%{
+                transform: translate(-50%, -50%) skewX(0deg) rotate(-1deg) ;
+                filter: brightness(2);
+            }
+            100%{
+                transform: translate(-50%, -50%) skewX(15deg) rotate(-1deg);
+                filter: brightness(5);
+            }
+        }
+
+    </style>
+</head>
+<body>
+ <div class="container">
+    <div>
+        <label for="">SPLIT TEXT</label>
+        <label for="">SPLIT TEXT</label></div>
+    </div>
+</body>
+</html>
+<!-- https://www.youtube.com/watch?v=pyySPJeRvSo&ab_channel=WebDevSimplified -->

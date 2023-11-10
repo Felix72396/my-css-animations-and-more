@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Animation</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background-color: rgb(19, 16, 16);
+        }
+
+        section{
+            position: relative;
+            margin: auto;        
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.circle{
+            position: relative;
+            width: 20rem;
+            height: 20rem; 
+            border-radius: 50%;
+        }
+
+        span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+  
+            transform: rotate(calc(18deg * var(--i)));
+        }
+
+        div.circle:nth-child(2) span{
+            transform: rotate(calc(-18deg * var(--i)));
+        }
+
+        div.circle:nth-child(1) span::before{
+            content: "";
+            position: absolute;
+            left: calc(100% - 5px);
+            top:  calc(40% - 5px);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: rgb(77, 77, 76);
+        }
+
+        div.circle:nth-child(2) span::before{
+            content: "";
+            position: absolute;
+            left: 0%;
+            top:  calc(40% - 5px);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: rgb(77, 77, 76);
+        }
+
+        span::before{
+            box-shadow: 0 0 .5rem 1px rgb(1, 251, 43);
+            animation: animate 2s linear infinite;
+            animation-delay: calc(0.05s * var(--j));
+        }
+
+        /* div.circle:nth-child(2) span:nth-child(1)::before{
+            background-color: red;
+        } */
+
+        @keyframes animate {
+            0%{
+                transform: scale(3);
+                box-shadow: 0 0 .5rem 5px rgb(1, 251, 43);
+                
+            }
+            100%{
+                transform: scale(1);
+                filter: hue-rotate(1turn);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="circle">
+            <span style="--i:1; --j:1;"></span>
+            <span style="--i:2; --j:2;"></span>
+            <span style="--i:3; --j:3;"></span>
+            <span style="--i:4; --j:4;"></span>
+            <span style="--i:5; --j:5;"></span>
+            <span style="--i:6; --j:6;"></span>
+            <span style="--i:7; --j:7;"></span>
+            <span style="--i:8; --j:8;"></span>
+            <span style="--i:9; --j:9;"></span>
+            <span style="--i:10; --j:10;"></span>
+            <span style="--i:11; --j:11;"></span>
+            <span style="--i:12; --j:12;"></span>
+            <span style="--i:13; --j:13;"></span>
+            <span style="--i:14; --j:14;"></span>
+            <span style="--i:15; --j:15;"></span>
+            <span style="--i:16; --j:16;"></span>
+            <span style="--i:17; --j:17;"></span>
+            <span style="--i:18; --j:18;"></span>
+            <span style="--i:19; --j:19;"></span>
+            <span style="--i:20; --j:20;"></span>
+        </div>
+
+        <div class="circle">
+            <span style="--i:1; --j:21;"></span>
+            <span style="--i:2; --j:22;"></span>
+            <span style="--i:3; --j:23;"></span>
+            <span style="--i:4; --j:24;"></span>
+            <span style="--i:5; --j:25;"></span>
+            <span style="--i:6; --j:26;"></span>
+            <span style="--i:7; --j:27;"></span>
+            <span style="--i:8; --j:28;"></span>
+            <span style="--i:9; --j:29;"></span>
+            <span style="--i:10; --j:30;"></span>
+            <span style="--i:11; --j:31;"></span>
+            <span style="--i:12; --j:32;"></span>
+            <span style="--i:13; --j:33;"></span>
+            <span style="--i:14; --j:34;"></span>
+            <span style="--i:15; --j:35;"></span>
+            <span style="--i:16; --j:36;"></span>
+            <span style="--i:17; --j:37;"></span>
+            <span style="--i:18; --j:38;"></span>
+            <span style="--i:19; --j:39;"></span>
+            <span style="--i:20; --j:40;"></span>
+        </div>
+    </section>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=dxquAfnHhqg&list=PLcreRLzJrFACFfBUC-co_ybyy878fSpVT&index=5&t=1s&ab_channel=OnlineTutorials -->

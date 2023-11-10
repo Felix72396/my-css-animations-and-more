@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: #f3ac3c;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        div.guitar-box{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: auto;
+            display: flex;  
+            align-items: center;
+        }
+
+        /* In this case: aspect ratio is used to reference the size of an element. For instance, if I have a 200px width div 
+        and it's got an aspect-ratio of 1 it means the height will be also 200px to keep the same ratio as the width*/
+        div.big-body-guitar{
+            height: 12rem;
+            aspect-ratio: 1;
+            background-color: #998235;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        div.big-body-guitar::before{
+            content: "";
+            position: absolute;
+            background-color: #1a4341;
+            height: 5rem;
+            width: 1.5rem;
+            border-radius: 1rem;
+            left: 4rem;
+            top: 3.5rem;
+        }
+
+        div.small-body-guitar{
+            height: 10rem;
+            width: 10rem;
+            background-color: #998235;
+            position: relative;
+            border-radius: 50%;
+            margin-left: -5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.small-body-guitar .sound-hole{
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background-color: #1a4341;
+            border: .5rem solid #f3ac3c;
+        }
+
+        div.fingerboard{
+            background-color: #1a4341;
+            height: 2rem;
+            width: 14rem;
+            margin-left: -1rem;
+        }
+
+        div.head{
+            background-color: #998235;
+            height: 2.8rem;
+            width: 3.6rem;
+            border-radius: 1rem;
+            margin-left: -1rem;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        div.head::before, div.head::after{
+            content: "";
+            position: absolute;
+            width: 2rem;
+            height: .4rem;
+            border-radius: 1rem;
+            background-color: #1a4341;
+            top: 25%;
+        }
+
+        div.head::after{
+            content: "";
+            position: absolute;
+            width: 2rem;
+            height: .4rem;
+            border-radius: 1rem;
+            background-color: #1a4341;
+            top: 60%;
+        }
+
+    
+
+
+    </style>
+</head>
+<body>
+   <div class="guitar-box">
+    <div class="big-body-guitar"></div>
+    <div class="small-body-guitar">
+        <div class="sound-hole"></div>
+    </div>
+    <div class="fingerboard"></div>
+    <div class="head"></div>
+   </div>
+</body>
+</html>
+<!-- https://www.youtube.com/watch?v=A0J-hB3kSQ4&ab_channel=KevinPowell -->

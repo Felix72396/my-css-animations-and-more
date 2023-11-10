@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Circles</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background-color: #cdccce;
+        }
+
+        ul{
+            list-style: none;
+            width: 60rem;
+            height: auto;
+       
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+        }
+
+        ul li{
+            width: 150px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: #80769d;
+            padding: 1rem;
+            border: 1rem solid #fff;
+            box-shadow: 0 10px 10px #000;
+            position: relative;
+            transition: .5s all;
+        }
+
+        ul li:hover{
+            cursor: pointer;
+            box-shadow: 0 10px 10px -5px #000,
+                        0 30px 10px -10px rgba(0, 0, 0, 0.8),
+                        0 50px 10px -15px rgba(0, 0, 0, 0.6),
+                        0 70px 10px -20px rgba(0, 0, 0, 0.4),
+                        0 90px 10px -25px rgba(0, 0, 0, 0.2),
+                        0 110px 10px -30px rgba(0, 0, 0, 0.067);
+        }
+
+        /* ul li::before{
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 10rem;
+            bottom: -0rem;
+            left: calc(50% - 25%);
+            background-color: #000;
+            z-index: -2;
+            filter: blur(50px);
+            opacity: 0;
+            transition: 1.5s all;
+        }
+
+        ul li:hover::before{
+            opacity: 1;
+            bottom: -9rem;
+            width: 80%;
+            left: calc(50% - 40%);
+        } */
+
+
+        li a{
+           width: 100%;
+           height: 100%;
+           display: grid;
+           place-items: center;
+        }
+
+        a img{
+            width: 50%;
+            height: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li title="Instagram"><a href="#"><img src="instagram.png" alt=""></a></li>
+        <li title="Linkedin"><a href="#"><img src="linkedin.png" alt=""></a></li>
+        <li title="Youtube"><a href="#"><img src="youtube.png" alt=""></a></li>
+        <li title="Twitter"><a href="#"><img src="twiter.png" alt=""></a></li>
+        <li title="WhatsApp"><a href="#"><img src="whatsapp.png" alt=""></a></li>
+    </ul>
+
+    <script>
+        // const ul = document.getElementsByTagName("ul")[0];
+        const item_list = document.getElementsByTagName("li");
+
+        for (let index = 0; index < item_list.length; index++) 
+        {
+            item_list[index].addEventListener("mouseover", function()
+            {
+                for (let item_index = 0; item_index < item_list.length; item_index++) 
+                {
+                    if(item_list[index] != item_list[item_index]){
+                        item_list[item_index].style.filter = "blur(10px)"; 
+                        item_list[item_index].style.transform = "scale(.8)";      
+                    }
+                    else{
+                        item_list[item_index].style.transform = "translateY(-5rem)";
+                    }    
+                }
+            });
+
+            item_list[index].addEventListener("mouseleave", function()
+            {
+                for (let item_index = 0; item_index < item_list.length; item_index++) 
+                {
+                    item_list[item_index].style.filter = "none";    
+                    item_list[item_index].style.transform = "scale(1)";          
+                }
+            });
+        }
+    </script>
+</body>
+</html>

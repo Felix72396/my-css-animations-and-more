@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalator</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body
+        {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(51, 51, 155);
+            color: #fff;
+           position: relative;
+           overflow: hidden;
+           animation: 10s rotate both infinite;
+        }
+
+        div{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(99, 99, 206);
+            transform: translate(-50%, -50%);
+            top: calc(50%);
+            left: calc(50%);
+            width: 20rem;
+            height: 32rem;
+            border-radius: 50% 50% 0 0;
+            overflow: hidden;
+        }
+
+        span{
+            position: absolute;
+            right: 0;
+            /* top: 100%;
+            width: 100%; */
+            height: 2rem;
+            background-color: rgb(88, 88, 201);
+            animation: 5s move-up linear;
+            /* animation-delay: -.5s; */
+        }
+
+        /* span:nth-child(even){
+            background-color: rgb(54, 25, 98);
+        } */
+
+
+        @keyframes move-up {
+            0%{
+                top: 100%;
+                width: 100%;
+            }
+            20%{
+                width: 70%;
+            }
+            40%{
+                width: 40%;
+            }
+            60%{
+                width: 10%;
+            }
+
+            100%{
+                top: -110%;
+                width: 0%;
+            }
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div>
+        <!-- <span></span> -->
+    </div>
+
+    <script>
+        var is_light_color = false;
+        setInterval(function(){
+            const span = document.createElement("span");
+
+            if(is_light_color){
+                span.style.backgroundColor = "rgb(51, 51, 155)";
+                is_light_color = false;
+            }
+            else{
+                is_light_color = true;
+            }
+
+            document.getElementsByTagName("div")[0].appendChild(span);
+
+            
+            
+            setTimeout(function(){
+                span.remove();
+                // document.getElementsByTagName("div")[0].removeChild(document.getElementsByTagName("div")[0].children[0]);
+        
+            }, 2700);
+        }, 180);
+        document.body.contentEditable=true;
+    </script>
+</body>
+</html>

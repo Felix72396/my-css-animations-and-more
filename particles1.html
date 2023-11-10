@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particles</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #442559;
+            display: flex;
+
+        }
+
+        div.container {
+            position: relative;
+          transform: scale(.4);
+            width: 30rem;
+            height: 30rem;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+           
+            transform: rotate(calc(36deg * var(--i)));
+        }
+
+        span::before{
+            content: "";
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            /* border-radius: 50%; */
+            border: 2px solid rgb(128, 180, 226);
+            box-shadow: 0 0 1rem rgb(128, 180, 226),
+                        2rem 4rem 0 rgb(128, 180, 226),
+                        2rem 4rem 2rem rgb(128, 180, 226),
+                        -4rem 2rem 0 rgb(128, 180, 226),
+                        -4rem 2rem 2rem rgb(128, 180, 226),
+                        -2rem -4rem 0 rgb(128, 180, 226),
+                        -2rem -4rem 2rem rgb(128, 180, 226);
+            animation: spin 3s linear infinite,
+                       change-color 3s linear infinite;
+            transition: 2s all;
+        }
+
+        div.container:hover span::before{
+            transform-origin: 50px;
+            box-shadow: 0 0 1rem rgb(128, 180, 226),
+                        -10rem -15rem 0 rgb(128, 180, 226),
+                        -10rem -15rem 2rem rgb(128, 180, 226),
+                        15rem -10rem 0 rgb(128, 180, 226),
+                        15rem -10rem 2rem rgb(128, 180, 226),
+                        15rem 18rem 0 rgb(128, 180, 226),
+                        15rem 18rem 2rem rgb(128, 180, 226),
+                        15rem 2rem 0 rgb(128, 180, 226),
+                        -2rem -10rem 0 rgb(128, 180, 226),
+                        -8rem 2rem 0 rgb(128, 180, 226),
+                        -16rem 0rem 0 rgb(128, 180, 226),
+                        20rem 2rem 0 rgb(128, 180, 226),
+                        24rem 0rem 0 rgb(128, 180, 226),
+                        28rem 2rem 0 rgb(128, 180, 226),
+                        32rem 10rem 0 rgb(128, 180, 226);
+        }
+
+        @keyframes spin {
+            100%{
+                transform: rotate(1turn);
+            }
+        }
+
+        @keyframes change-color {
+            0%{
+                filter: hue-rotate(0deg);
+            }
+            100%{
+                filter: hue-rotate(360deg);
+            }        
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+    </div>
+
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=J4sO7CAN9fU&ab_channel=ProgrammerCloud -->

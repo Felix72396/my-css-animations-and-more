@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frog</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+          width: 100vw;
+          height: 100vh;
+          position: relative;
+          background: #293462;
+        }
+      
+        div {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          top: 50%;
+          width: 150px;
+          height: 100px;
+          border-radius: 4rem / 4rem;
+          background: #A64942;
+          overflow: hidden;
+        }
+      
+        span{
+          position: absolute;
+           transform: translate(-50%, -50%);
+          left: 50%;
+          top: 20px;
+          background: #FE5F55;
+          width: 141%;
+          height: 100%;
+          border-radius: 60%;
+        }
+      
+        body > i{
+          position: absolute;
+           transform: translate(-50%, -50%);
+          left: calc(50% - 2.1rem);
+          top: calc(50% - 3rem);
+          background: #FE5F55;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          
+        }
+      
+        body > i:nth-of-type(2){
+            left: calc(50% + 2rem);
+        }
+      
+        [class*="eyeball"]{
+          position: absolute;
+           transform: translate(-50%, -50%);
+          left: 25px;
+          top: 51%;
+          background: #FFF1C1;
+          width: 30px;
+          height: 30px;
+            border-radius: 50%;
+        }
+      
+        [class*="eyeball"]::before{
+          content: "";
+          position: absolute;
+           transform: translate(-50%, -50%);
+          left: 50%;
+          top: 50%;
+          width: 10.3px;
+          height: 10.3px;
+          border-radius: 50%;
+           background: #293462;
+        }
+      
+        [class*="eyeball"]::after{
+          content: "";
+          position: absolute;
+           transform: translate(-50%, -50%);
+          left: 50%;
+          top: 70px;
+          width: 10.3px;
+          height: 10.3px;
+          border-radius: 50%;
+           background: #293462;
+        }
+      
+        [class="left-eyeball"]::after{
+          left: 40px;
+        }
+      
+        [class="right-eyeball"]::after{
+          left: -10px;
+        }
+      </style>
+</head>
+<body>
+    <div><span></span></div>
+<i class="eye"><i class="left-eyeball"></i></i>
+<i class="eye"><i class="right-eyeball"></i></i>
+
+</body>
+</html>

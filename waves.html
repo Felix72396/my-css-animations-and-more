@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waves</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        span{
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background-color: #000;
+            animation: ondulate .5s linear infinite;
+            animation-delay: calc(var(--i) * 0.01s);
+            position: absolute;
+            transform: translate(50%, 50%);
+            left: calc(var(--i) * 5px);
+            top: 60%;
+            filter: blur(5px);
+            box-shadow: 0 0 .5rem .2rem rgb(109, 172, 227);
+        }
+
+        @keyframes ondulate 
+        {
+            0%,3%,97%,100%{
+                top: 60%;
+            }
+            50%, 54%{
+                top: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for (let index = 0; index < 305; index++) {
+            let span = document.createElement("span");
+            span.style = `--i:${index}`;
+            document.body.appendChild(span);
+            
+        }
+    </script>
+</body>
+</html>

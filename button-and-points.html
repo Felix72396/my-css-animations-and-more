@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button And Points</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        button{
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            background-color: #000;
+            width: 100px;
+            aspect-ratio: 1;
+            border: none;
+            transition: 1s all;
+        }
+
+        i{
+            color: aliceblue;
+            position: relative;
+            inset: 0;
+            margin: auto;
+            
+        }
+
+        button:hover{
+            background-color: #1a1a1a;
+            transform: scale(1.3);
+            cursor: pointer;
+            
+        }
+
+        span
+        {
+            width: 10px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            position: absolute;
+            z-index: -1;
+            left: -15%;
+            top: -15%;
+            animation: move 1s infinite paused;
+            
+        }
+
+        button:hover span
+        {
+            background-color: inherit;
+            animation: move 3s infinite running;
+            animation-delay: calc(var(--i) * .6s);
+            
+        }
+
+        @keyframes move {
+            0%,100%{
+                left: -15%;
+                top: -15%;
+            }
+            25%{
+                left: 105%;
+                top: -15%;
+            }
+            50%{
+                left: 105%;
+                top: 105%;
+            }
+            75%{
+                left: -15%;
+                top: 105%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button>
+        <i>Hover Me</i>
+        <span style="--i:0.0;"></span>
+        <span style="--i:0.2;"></span>
+        <span style="--i:0.4;"></span>
+        <span style="--i:0.6;"></span>
+        <span style="--i:0.8;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:1.2;"></span>
+        <span style="--i:1.4;"></span>
+        <span style="--i:1.6;"></span>
+        <span style="--i:1.8;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:2.2;"></span>
+    </button>
+    
+</body>
+</html>

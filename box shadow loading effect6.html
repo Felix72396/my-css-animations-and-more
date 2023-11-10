@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow Loading Effect6</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(47, 102, 231);
+            font-family: monospace;
+            display: flex;
+        }
+
+        div.container{
+            /* position: relative; */
+            margin: auto;
+            width: 80rem;
+            height: 30rem;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        span{
+           
+            width: 5rem;
+            height: 100%;
+            position: relative;
+            animation: animate 1.2s linear infinite;
+            animation-delay: calc(0.1s * var(--i));
+            color: #fff;
+            font-size: 5rem;
+            display: grid;
+            place-content: center;
+        }
+      
+
+        @keyframes animate {
+            0%, 10%, 90%, 100%{
+                transform: translateX(0) scale(1);
+                box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.418);
+                opacity: .5;
+            }
+            50%{  
+                transform: translateX(0) scale(1.5);
+                box-shadow: 0 1.2rem 5rem 1rem rgba(0, 0, 0, 0.418);
+                background-color: rgba(4, 188, 255, 0.424);
+                opacity: 1;
+                /* width: 1rem; */
+            }
+        }
+  
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:1;"></span>
+    </div>
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=OqcgQnn3dBk&ab_channel=OnlineTutorials -->

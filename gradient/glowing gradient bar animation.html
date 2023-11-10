@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing bar</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(24, 23, 23);
+            display: flex;
+        }
+
+        div.bar{
+            width: 40%;
+            height: 2rem;
+            margin: auto;
+            border-radius: 1rem;
+            background: linear-gradient(to left, purple, yellow, green, blue, red);
+            /* -webkit-box-reflet: below 1px linear-gradient(to left, purple, yellow, green, blue, red); */
+            background-repeat: repeat-x;
+            animation: move-right 4s linear infinite;
+        }
+
+        div.bar:nth-child(2){
+            background: repeating-linear-gradient(90deg, purple, yellow, green, blue, yellow, red, purple);
+            /* animation: none; */
+            background-position: 100px;
+            animation: move-right2 20s linear infinite;
+            background-size: 250%;
+        }
+
+    
+
+        @keyframes move-right {
+            0,100%{
+                /* transform: skew(0deg) scale(1); */
+                /* filter: brightness(5); */
+                filter:invert(5) saturate(2) blur(0);
+            }
+            50%{
+                filter:invert(1) saturate(4) blur(3px) sepia(2);
+            }
+        }
+
+        @keyframes move-right2 {
+            100%{
+               background-position: 500%;
+            }
+
+            /* 50%{
+                filter:invert(1) saturate(4);
+            } */
+        }
+
+        div.inner-container{
+            width: 14rem;
+            aspect-ratio: 1;
+            margin: auto;
+            border-radius: .8rem;
+            background-color: rgb(24, 23, 23);
+           
+            box-shadow: inset 1.5rem 1.5rem .6rem 0 rgba(0, 0, 0, 0.425);
+   
+            display: grid;
+            place-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=rdtTCVzTwSQ&ab_channel=OnlineTutorials -->

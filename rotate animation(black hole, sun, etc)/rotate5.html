@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+
+            background-color: rgb(0, 0, 0);
+            /* background: linear-gradient(to right, rgba(148, 121, 33, 0.865),rgba(126, 56, 16, 0.92), rgba(143, 113, 15, 0.879), rgba(148, 121, 33, 0.865),rgba(126, 56, 16, 0.92), rgb(151, 75, 12)); */
+        }
+
+        div.container{
+            margin: auto;
+            /* background-color: red; */
+            width: 25rem;
+            height: 25rem;
+            border-radius: 50%;
+            position: relative;
+            animation: spin 2s linear infinite;
+        }
+
+        div.container div:not([class="hole"]){
+            position: absolute;
+            width: 100px;
+            height: 80px;
+            transform: scale(2);
+            background-color: rgb(255, 157, 0);
+            /* box-shadow: 0 0 1rem 1rem rgba(239, 145, 3, 0.598); */
+            filter: blur(200px);
+            border-radius: 50%;
+            animation: grow 4s linear infinite;
+        }
+
+        div.container div:nth-child(1){
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        div.container div:nth-child(2){
+            right: 11%;
+            top: 18%;
+            transform: translateY(-25%);
+        }
+
+        div.container div:nth-child(3){
+            right: 0%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        
+        div.container div:nth-child(4){
+            right: 11%;
+            top: 78%;
+            transform: translateY(-50%);
+        }
+
+          
+        div.container div:nth-child(5){
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        div.container div:nth-child(6){
+            left: 11%;
+            top: 78%;
+            transform: translateY(-50%);
+        }
+
+        div.container div:nth-child(7){
+            left: 0%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        div.container div:nth-child(8){
+            left: 11%;
+            top: 18%;
+            transform: translateY(-25%);
+        }
+
+        div.container div:nth-child(9){
+            width: 50%;
+            height: 50%;
+            padding: 5rem;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, rgb(239, 58, 3),rgb(255, 174, 0), rgb(239, 58, 3), rgb(239, 58, 3), rgb(234, 162, 6));
+            box-shadow: 0 0 1rem 1rem rgb(239, 145, 3);
+            background-size: 400%;
+            z-index: -1;
+            position: absolute;
+            filter: brightness(2) blur(1px);
+            animation: blur 10s ease infinite;
+            animation: move 3s ease infinite;
+        }
+
+        @keyframes spin 
+        {
+            100%{
+                transform: rotate(1turn);
+            }
+        }
+
+       @keyframes grow {
+        0%{
+           transform: scale(1);
+        }
+        50%{
+            transform: scale(2.2);
+        } 
+        100%{
+            transform: scale(1);
+        }
+    
+       }
+
+       @keyframes blur {
+        0%{
+            filter: brightness(1) blur(20px);
+        }
+        100%{
+            filter: brightness(2) blur(1px);
+        }
+        0%{
+            filter: brightness(1) blur(20px);
+        }
+       }
+
+       @keyframes move {
+        0%{
+            background-position: right;
+        }
+        50%{
+            background-position: left;
+        }
+        100%{
+            background-position: right;
+        }
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="hole"></div>
+    </div>
+</body>
+</html>

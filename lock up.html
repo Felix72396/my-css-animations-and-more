@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock up</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #e38f66;
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        div.container{
+            margin: auto;
+            width: 20rem;
+            height: 20rem;
+            background: #924357;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        div.container::before{
+            content: "";
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(45deg);
+            left: 50%;
+            top: 50%;
+            width: 40%;
+            height: 40%;
+
+            border: 50px solid #F1ED7A;
+
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+
+            border-radius: 50%;
+        }
+      
+       
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

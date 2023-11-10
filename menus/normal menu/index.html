@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        background-color: rgb(51, 51, 84);
+        width: 100%;
+        height: 20rem;
+    }
+
+    nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* li:nth-child(5){
+        font-size: 2rem;
+    } */
+
+    li {
+        list-style: none;
+        width: 10rem;
+        height: 5rem;
+        text-align: center;
+
+    }
+
+    a {
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color: white;
+    }
+
+    a:hover {
+        background-color: rgb(188, 89, 89);
+    }
+
+    header nav ul .drop-down{
+        position: relative;
+        width: 12rem;
+    }
+
+    header nav ul .drop-down::after {
+        content: "";
+        height: 5px;
+        width: 20%;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(255, 0, 0);
+        position: absolute;
+        transition: 1s;
+    }
+
+    header nav ul .drop-down:hover:after {
+        content: "";
+        height: 5px;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(255, 0, 0);
+        position: absolute;
+        transition: 1s;
+    }
+
+    .drop-down ul {
+        display: none;
+        height: 20rem;
+    }
+
+  
+    .drop-down:hover ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .drop-down ul li {
+        width: 12rem;
+        margin: 0 auto ;
+    }
+
+    .hover-drop-down-color {
+        background-color: brown;
+    }
+
+    /* .drop-down > a:focus{
+        background-color: green;
+    }
+
+    .drop-down:focus-within li a:focus{
+        background-color: green;
+    } */
+
+
+</style>
+
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Content</a></li>
+                <li class="drop-down" ><a href="#">Courses</a>
+                    <ul>
+                        <li><a href="#">Programming</a></li>
+                        <li ><a href="#">English</a></li>
+                        <li><a href="#">French</a></li>
+                        <li><a href="#">Maths</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.querySelectorAll(".drop-down ul li").forEach(function(li){
+            li.addEventListener("mouseover",function(){
+                document.querySelector(".drop-down a").classList.add("hover-drop-down-color");
+            });
+
+            li.addEventListener("mouseout",function(){
+                document.querySelector(".drop-down a").classList.remove("hover-drop-down-color");
+            });
+        });
+    </script>
+</body>
+
+</html>

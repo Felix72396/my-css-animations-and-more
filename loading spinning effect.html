@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Spinning Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: #fff;
+            display: flex;
+            align-content: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            padding: 5rem;
+        }
+
+        div.container{
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            margin: 5rem;
+            position: relative;
+            animation: change-color 20s linear infinite;
+        }
+
+
+        span{
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            position: absolute;
+            transform: rotate(calc(18deg * var(--i)));
+        }
+
+        div.container:nth-child(1), div.container:nth-child(2){
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        div.container:nth-child(2){
+            left: 12rem;
+        }
+
+        div.container:nth-child(2) span{
+            transform: rotate(calc(18deg * var(--i)));
+        }
+
+        div.container:nth-child(1){
+            transform: rotate(190deg);
+        }
+
+        div.container:nth-child(2) span::before{
+            top: 0;
+            left: 0;
+        }
+
+
+
+        span::before{
+            content: "";
+            position: absolute;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            box-shadow: 0 0 1rem 3px rgb(71, 255, 47),
+                        0 0 2rem 6px rgb(71, 255, 47),
+                        0 0 5rem 10px rgb(71, 255, 47),
+                        0 0 10rem 20px rgb(71, 255, 47);
+            background: rgb(0, 0, 0);
+            animation: spin 2s linear infinite;
+            transform: scale(0);
+            animation-delay: calc(0.1s * var(--i));
+          
+        }
+
+        div.container:nth-child(2) span::before{
+            background: rgb(71, 255, 47);
+        }
+
+        div.container:nth-child(3) span::before{
+            background: rgb(254, 254, 254);
+        }
+
+        div.container:nth-child(4) span::before{
+            background: rgb(255, 47, 47);
+        }
+
+        div.container:nth-child(5) span::before, div.container:nth-child(6) span::before, div.container:nth-child(7) span::before{
+            background: linear-gradient(red, yellow);
+            width: 20rem;
+        }
+
+   
+        @keyframes spin {
+            0%{
+                transform: scale(1);
+            }
+
+            100%{
+                transform: scale(0);
+            }
+        }
+
+        @keyframes change-color {
+            0%{
+               filter: hue-rotate(0deg);
+            }
+
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    
+
+   
+    
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+    </div>
+
+
+    
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+    </div>
+
+    
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+    </div>
+
+    
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+    </div>
+</body>
+</html>

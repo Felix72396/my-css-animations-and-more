@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus within</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        background-color: rgb(51, 51, 84);
+        width: 100%;
+        height: 20rem;
+    }
+
+    nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    li {
+        list-style: none;
+        width: 10rem;
+        height: 5rem;
+        text-align: center;
+
+    }
+
+    a {
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color: white;
+    }
+
+    a:hover {
+        background-color: rgb(188, 89, 89);
+    }
+
+    header nav ul .drop-down{
+        position: relative;
+        width: 12rem;
+    }
+
+    header nav ul .drop-down::after {
+        content: "";
+        height: 5px;
+        width: 20%;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(255, 0, 0);
+        position: absolute;
+        transition: 1s;
+    }
+
+    header nav ul .drop-down:hover::after {
+        content: "";
+        height: 5px;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(255, 0, 0);
+        position: absolute;
+        transition: 1s;
+    }
+
+    .drop-down ul {
+        display: none;
+        height: 20rem;
+    }
+
+    /* With focus-within you can keep the focus of the parent when you click a child element */
+
+    .drop-down:focus-within > a{
+        background-color: rgb(188, 89, 89);
+    }
+
+  
+    .drop-down:focus-within ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .drop-down ul li {
+        width: 12rem;
+        margin: 0 auto ;
+    }
+
+  input[type="text"]:focus{
+    outline: none;
+  }
+  input[type="text"]:focus-visible{
+    outline: 5px dashed rgb(133, 91, 2);
+  }
+
+
+</style>
+
+
+<body>
+  
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Content</a></li>
+                <li class="drop-down" ><a href="#">Courses</a>
+                    <ul>
+                        <li><a href="#">Programming</a></li>
+                        <li ><a href="#">English</a></li>
+                        <li><a href="#">French</a></li>
+                        <li><a href="#">Maths</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <input type="text" name="" id="">
+</body>
+
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=Qhaz36TZG5Y&ab_channel=Fireship -->
+<!-- https://css-tricks.com/almanac/selectors/f/focus-visible/ -->

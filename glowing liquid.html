@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Liquid</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background-color: rgb(19, 16, 16);
+        }
+
+        section{
+            position: relative;
+            margin: auto;
+           
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.bowl{
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            background-color: rgba(68, 67, 67, 0.322);
+            position: relative;
+            animation: shake .5s linear infinite;
+        }
+
+        span.opening{
+            position: absolute;
+            top: -.3rem;
+            left: 28%;
+            transform: rotate(8deg);
+      
+            width: 8rem;
+            height: 4rem;
+            border: 15px solid rgba(120, 117, 117, 0.527);
+            border-radius: 50%;
+        }
+
+        span.reflection{
+            position: absolute;
+            top: 30%;
+            left: 28%;
+            transform: rotate(8deg);
+            background-color: rgba(16, 237, 101, 0.182);
+            box-shadow: 0 0 15rem 2rem rgb(10, 237, 33);
+            width: 8rem;
+            height: 4rem;
+            border-radius: 50%;
+            z-index: 2;
+            filter: blur(1px);
+        }
+
+        span.liquid-top{
+            position: absolute;
+            top: 50%;
+            left: 5.16%;
+            transform: rotate(-3deg);
+            width: 216px;
+            height: 20px;
+            background-color: rgb(19, 175, 35);
+            border-radius: 50%;
+            z-index: 1;
+            animation: shake .5s linear infinite;
+            animation-delay: .3s;
+        }
+
+        span.liquid{
+            position: absolute;
+            top: 12%;
+            left: 5.2%;
+            transform: rotate(-3deg);
+            width: 215px;
+            height: 200px;
+            border-bottom: 100px solid rgb(10, 237, 33);
+           
+            border-radius: 50%;
+  
+            animation: shake .5s linear infinite;
+            animation-delay: .3s;
+        }
+
+        span.shadow{
+            position: absolute;
+            bottom: -1.5rem;
+            left: -.2rem;
+            transform: rotate(5deg);
+            width: 215px;
+            height: 70px;       
+            background-color: rgb(2, 6, 4);
+            filter: blur(10px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        @keyframes shake {
+            0%, 100%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(3deg);
+            }
+        }
+  
+    </style>
+</head>
+<body>
+    <section>
+     <div class="bowl">
+        <span class="opening"></span>
+        <span class="reflection"></span>
+        <span class="liquid-top"></span>
+        <span class="liquid"></span>
+       
+     </div>
+     <span class="shadow"></span>
+    </section>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=DkwvTVbY7HQ&list=PLcreRLzJrFACFfBUC-co_ybyy878fSpVT&index=6&ab_channel=OnlineTutorials -->

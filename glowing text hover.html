@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Hover Text Effect</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(0, 0, 0);
+            color: rgb(70, 68, 68);
+            font-family: monospace;
+            display: flex;
+        }
+
+        h2{
+            position: relative;
+            display: flex;
+            margin: auto;
+            font-size: 8rem;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        span{
+            transition: .5s all;
+            position: relative;
+        }
+
+        span:nth-child(2){
+            display: none;
+        }
+
+        h2:hover span:nth-child(2){
+            display: block;
+        }
+
+        h2:hover span:nth-child(3){
+            margin-right: 2rem;
+        }
+
+        h2:hover span:not(span:nth-child(3)){
+            color: #fff;
+            text-shadow: 0 0 1rem #fff;
+            filter: drop-shadow(0 0 55px rgb(255, 255, 255));
+           
+        }
+
+
+  
+    </style>
+</head>
+
+<body>
+    <h2>
+        <span>I</span>
+        <span>'</span>
+        <span>M</span>
+        <span>P</span>
+        <span>O</span>
+        <span>S</span>
+        <span>S</span>
+        <span>I</span>
+        <span>B</span>
+        <span>L</span>
+        <span>E</span>
+    </h2>
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=I_RhD99rR0c&ab_channel=OnlineTutorials -->

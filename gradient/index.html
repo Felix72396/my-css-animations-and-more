@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+            align-content: center;
+        }
+        .container div {
+            width: 15rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+        }
+
+        .container div:nth-child(1) {
+            background: linear-gradient(to left, red, orange);
+        }
+
+        .container div:nth-child(2) {
+            background: linear-gradient(to top, red, orange);
+        }
+
+        .container div:nth-child(3) {
+            background: linear-gradient(to right, red, orange);
+        }
+
+
+        .container div:nth-child(4) {
+            background: linear-gradient(180deg, red, orange);
+        }
+
+        .container div:nth-child(5) {
+            background: linear-gradient(black, red, orange, green);
+        }
+
+        .container div:nth-child(6) {
+            background: linear-gradient(black 80%, red, orange 15%, green);
+        }
+
+        .container div:nth-child(7) {
+            background: repeating-linear-gradient(black, red, orange, green 10%);
+        }
+
+        .container div:nth-child(8) {
+            background: radial-gradient(black, rgb(0, 255, 47), orange);
+        }
+
+        .container div:nth-child(9) {
+            background: radial-gradient(circle at top, rgb(0, 255, 47), orange);
+        }
+
+        .container div:nth-child(10) {
+            background: repeating-radial-gradient(rgb(0, 255, 47), orange 10%);
+        }
+
+        .container div:nth-child(11) {
+            background: repeating-linear-gradient(45deg,green, green 10px, orange 10px, orange 50px);
+        }
+
+        .container div:nth-child(12) {
+            background: repeating-linear-gradient(45deg,green, green 10px, orange 50px);
+        }
+
+        .container div:nth-child(13) {
+            background: repeating-linear-gradient(45deg,green 20px, orange 50px, red 55px);
+        }
+
+        .container div:nth-child(14) {
+            background: repeating-linear-gradient(90deg,green, green 10px, orange 10px, orange 20px);
+        }
+
+        .container div:nth-child(15) {
+            background: repeating-linear-gradient(135deg,green, green 10px, orange 10px, orange 20px);
+        }
+
+        .container div:nth-child(16) {
+            background: repeating-linear-gradient(180deg,green, green 10px, orange 10px, orange 20px);
+        }
+
+        .container div:nth-child(17) {
+            background: repeating-linear-gradient(360deg,green, green 10px, orange 10px, orange 20px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

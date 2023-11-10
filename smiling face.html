@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smiling face effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(33, 31, 31);
+            font-family: monospace;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        section{
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: space-between; */
+            align-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        label{
+            width: 8rem;
+            height: 8rem;
+        }
+
+        div.face{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(83, 80, 80);
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            mix-blend-mode: lighten;
+        }
+
+        div.face::before{
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgb(7, 7, 7);
+            box-shadow: 45px 0 0 rgb(7, 7, 7);
+            top: 40%;
+            left: calc(50% - 30px);
+        }
+
+        div.face::after{
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 10px;
+            /* border-radius: 50%; */
+            background-color: rgb(7, 7, 7);
+       
+            top: 70%;
+            left: calc(50% - 12.5px);
+            transition: .7s all;
+        }
+
+        label input:checked ~ .face{
+            background-color: rgb(224, 86, 109);    
+            z-index: 5;
+            filter: drop-shadow(0 0 50px rgb(224, 86, 109)) drop-shadow(0 0 100px rgb(224, 86, 109)) drop-shadow(0 0 150px rgb(224, 86, 109));
+        }
+
+        label input:checked ~ .face::after{
+            height: 12.5px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        label:nth-child(even) input:checked ~ .face{
+            background-color: rgb(12, 238, 12);
+            filter: drop-shadow(0 0 50px rgb(12, 238, 12)) drop-shadow(0 0 100px rgb(12, 238, 12)) drop-shadow(0 0 150px rgb(12, 238, 12));
+        }
+
+
+        input{
+            appearance: none;
+        }
+
+      
+
+    </style>
+</head>
+<body>
+   <section>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="pink" >
+        <div class="face"></div>
+    </label>
+    <label>
+        <input type="radio" name="green">
+        <div class="face"></div>
+    </label>
+    
+   </section>
+ 
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=TPc03KcidIo&list=PLcreRLzJrFACFfBUC-co_ybyy878fSpVT&index=8&ab_channel=OnlineTutorials -->

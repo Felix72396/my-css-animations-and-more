@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear gradient</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            word-break: break-all;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        center{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        div{
+            background-color: black;
+            flex: Min(150px, 20%);
+            aspect-ratio: 1;
+            border: 1px solid #fff;
+        }
+
+        div:nth-child(1){
+            background: linear-gradient(green 50%, red 50%);
+        }
+
+        div:nth-child(2){
+            background: linear-gradient(45deg, green 50%, red 50%);
+        }
+
+        div:nth-child(3){
+            background: linear-gradient(90deg, green 50%, red 50%);
+        }
+
+        div:nth-child(4){
+            background: linear-gradient(135deg, green 50%, red 50%);
+        }
+
+        div:nth-child(5){
+            background: linear-gradient(180deg, green 50%, red 50%);
+        }
+
+        div:nth-child(6){
+            background: repeating-linear-gradient(green 20%, red 50%);
+        }
+
+        div:nth-child(7){
+            background: repeating-linear-gradient(green, red 50%);
+        }
+
+        div:nth-child(8){
+            background: repeating-linear-gradient(45deg, green, green 50px, red 50px, red);
+        }
+
+        div:nth-child(9){
+            background: repeating-linear-gradient(green, green 50px, red 50px, red);
+        }
+
+        div:nth-child(10){
+            background: repeating-linear-gradient(90deg, green, green 50px, red 50px, red);
+        }
+
+        div:nth-child(11){
+            background: repeating-linear-gradient(90deg, green, green 10px, red 10px, red 15px );
+        }
+
+        div:nth-child(12){
+            background: repeating-linear-gradient(90deg, green, green 10px, red 10px, red 20px);
+        }
+
+        div:nth-child(13){
+            background: repeating-linear-gradient(90deg, green, green 10px, red 10px, red 20px, yellow 20px, yellow 30px);
+        }
+
+        div:nth-child(14){
+            background: repeating-linear-gradient(180deg, green, green 10px, red 10px, red 20px, yellow 20px, yellow 30px);
+        }
+
+        div:nth-child(15){
+            background: repeating-linear-gradient(90deg, green, green 10%, red 10%, red 20%, yellow 20%, yellow 100%);
+        }
+
+        div:nth-child(16){
+            background: repeating-linear-gradient(90deg, green 10%, red 20%, yellow 60%);
+        }
+
+        div:nth-child(17){
+            background: linear-gradient(to bottom right, green 33%, red 33%, red 66%, yellow 66%);
+        }
+
+        div:nth-child(18){
+            background: conic-gradient(rgba(0, 0, 0, 0.292), rgba(0, 0, 255, 0.553), rgba(255, 0, 0, 0.286), rgba(128, 0, 128, 0.331)), linear-gradient(to bottom right, rgba(0, 128, 0, 0.527) 33%, rgba(255, 0, 0, 0.292) 33%, red 66%, rgba(255, 255, 0, 0.521) 66%), radial-gradient(blue 20%, red 20%, red, blue 50%, blue, red 50%, red);
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </center>
+</body>
+</html>

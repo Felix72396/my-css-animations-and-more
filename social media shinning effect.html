@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Shining Effect</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgb(243, 7, 203), #ccc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        div.container {
+            position: relative;
+          
+            width: 60rem;
+            height: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            /* border: 5px solid rgb(0, 255, 0); */
+            z-index: 9;
+          
+        }
+
+        div.social-media{
+            position: relative;
+            border: 2px solid rgba(204, 204, 204, 0.39);
+            box-shadow: 0 0 5rem rgba(117, 115, 115, 0.281);
+            border-radius: 1rem;
+            width: 8rem;
+            height: 8rem;
+            backdrop-filter: blur(10px);
+
+            background-color: rgba(204, 204, 204, 0.034);
+            transition: 1s all;
+            overflow: hidden;
+        }
+
+        div.social-media:hover{
+            transform: translateY(-2rem);
+            cursor: pointer;
+        }
+
+        div.social-media::before{
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 4rem;
+            background-color: rgba(248, 242, 242, 0.251);
+            transform: rotate(65deg);
+            left: -12rem;
+            top: 1rem;
+            transition: .4s all;
+        }
+
+        div.social-media:hover::before{
+            left: 100%;
+        }
+
+        div.social-media:nth-of-type(1){
+            background: url(youtube.png);
+            background-position: center center;
+            background-size: 4rem 3rem;
+            background-repeat: no-repeat;
+        }
+        
+        div.social-media:nth-of-type(2){
+            background: url(linkedin.png);
+            background-position: center center;
+            background-size: 4rem 3rem;
+            background-repeat: no-repeat;
+        }
+
+        div.social-media:nth-of-type(3){
+            background: url(whatsapp.png);
+            background-position: center center;
+            background-size: 4rem 3rem;
+            background-repeat: no-repeat;
+        }
+
+        div.social-media:nth-of-type(4){
+            background: url(instagram.png);
+            background-position: center center;
+            background-size: 4rem 3rem;
+            background-repeat: no-repeat;
+        }
+
+        
+        div.social-media:nth-of-type(5){
+            background: url(twiter.png);
+            background-position: center center;
+            background-size: 4rem 3rem;
+            background-repeat: no-repeat;
+        }
+
+        div.blue-blur-background{
+            background-color: rgb(79, 137, 224);
+            filter: blur(20rem);
+            position: absolute;
+            width: 80rem;
+            height: 20rem;
+            /* border-radius: 50%; */
+            left: 5rem;
+            bottom: 5rem;
+        }
+
+        div.yellow-blur-background{
+            background-color: rgba(232, 225, 171, 0.772);
+            filter: blur(20rem);
+            position: absolute;
+            width: 60rem;
+            height: 30rem;
+            /* border-radius: 50%; */
+            right: 0rem;
+            bottom: 2rem;
+            z-index: 1;
+        }
+
+        div.half{
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            top: 50%;
+            background: linear-gradient(rgba(255, 255, 255, 0.094), transparent);
+            border-top: 3px solid rgba(221, 217, 217, 0.384);
+            z-index: 5;
+        }
+
+
+
+
+        @keyframes shine {
+            100%{
+               box-shadow: 0rem 0rem 8rem .5rem rgb(0, 255, 0),
+                           0rem 0rem 10rem 1rem rgb(0, 255, 0),
+                           0rem 0rem 15rem 2rem rgb(0, 255, 0);
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+     <div class="social-media"></div>
+     <div class="social-media"></div>
+     <div class="social-media"></div>
+     <div class="social-media"></div>
+     <div class="social-media"></div>
+    </div>
+    <div class="yellow-blur-background"></div>
+    <div class="blue-blur-background"></div>
+ 
+    <div class="half"></div>
+   
+</body>
+
+</html>
+
+<!--https://www.youtube.com/watch?v=yh6lyefeUKc&ab_channel=OnlineTutorials -->

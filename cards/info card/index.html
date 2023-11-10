@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Card</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+            color: rgb(0, 0, 0);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            font-family: sans-serif;
+        }
+
+        div.card {
+            position: relative;
+            width: Clamp(20rem, 70%, 50rem);
+            height: auto;
+            margin: auto;
+            
+            border-radius: 1rem;
+            /* background-color: #CC98FF; */
+
+            isolation: isolate;
+            overflow: hidden;
+
+        }
+
+        div.content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        img {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 5px;
+            width: 25%;
+            height: 97.5%;
+            border-radius: 1rem;
+            border: 5px solid #fff;
+            box-shadow: 1px 1px 7px rgb(144, 142, 142);
+        }
+
+        div.info{
+            width: 100%;
+           
+            /* background-color: #fff; */
+        }
+
+        h2 {
+            background: linear-gradient(to right, rgb(196, 98, 124), rgb(183, 122, 122));
+            border-radius: 1rem;
+            color: #fff;
+            text-align: justify;
+    
+            font-size: calc(1rem + 1vmax);
+            font-weight: 900;
+            padding-block: 1rem;
+        }
+
+        p{
+            text-align: justify;
+         
+            margin-block: 1rem;
+        }
+
+        span, p{
+            width: 75%;
+            padding-inline: 1rem;
+            display: block;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <span></span>
+        <div class="content">
+            <img src="pic.jpg" alt="">
+            
+            <div class="info">
+                <h2>
+                    <span>Hello, I'm Félix Antonio Paniagua and this is one of the most astonishing cards I've ever done.</span>
+                </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil molestias, vitae ratione adipisci
+                    veritatis provident, quia, velit quis hic cum iste totam in eaque? Quas maxime at hic esse nesciunt.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur <b>adipisicing</b> elit. Aperiam, unde. Quo fuga numquam possimus
+                    consequatur omnis eum maxime tempora fugit saepe veritatis atque eveniet commodi necessitatibus
+                    inventore assumenda optio, consectetur ex. <b>Quisquam placeat libero amet aliquid soluta eligendi animi,
+                    minima eius nulla necessitatibus, rem consectetur iure ratione quibusdam pariatur tempore.</b></p>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=d071ZRyZlyM&ab_channel=OnlineTutorials -->

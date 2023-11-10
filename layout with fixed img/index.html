@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout With Fixed Img</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            /* modifies the cursor color */
+            caret-color: red;
+        }
+
+        body {
+            max-width: 100vw;
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+            /* background-image: url(mandala.png);
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: contain;
+            background-repeat: no-repeat; */
+        }
+
+        img{
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: .3;
+        }
+
+        header {
+            width: 100vw;
+            height: 100vh;
+            background-image: url(geometric.png);
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: rgb(241, 180, 180);
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.502);
+            width: 100vw;
+            height: auto;
+            padding-block: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul {
+            width: auto;
+            height: auto;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            margin-inline: 1rem;
+            transition: 1s all;
+        }
+
+        li:hover{
+            transform: translateY(-5px);
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 2rem;
+            background-color: rgba(249, 5, 5, 0.249);
+            padding: 1rem;
+            transition: 1s all;
+        }
+
+        a:hover{
+            background-color: rgba(249, 5, 5, 0.55);
+            color: #fff;
+        }
+
+        *::selection{
+            color: #fff;
+            background-color: rgba(255, 0, 0, 0.394);
+        }
+
+        div.container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         
+            margin-inline: auto;
+            margin-block-start: -10rem;
+            /* top: 160%;
+            left: 50%; */
+            width: 50vw;
+            height: auto;
+        }
+
+        div[class*="content"]{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            padding-block-start: 2rem;
+            padding-block-end: 2rem;
+        }
+
+        div.content1{        
+            background-color: rgba(232, 15, 15, 0.428); 
+        }
+
+        div.content2 :where(h2, p){
+            color: rgb(133, 18, 18);
+        }
+
+
+        h2{
+            color: rgb(253, 253, 253);
+            font-size: 4rem;
+            font-weight: 900;
+        }
+
+        p{
+            text-align: justify;
+            padding-inline: 3rem;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        footer{
+            position: absolute;
+            width: 100vw;
+            height: 50vh;
+ 
+            background-color: rgb(241, 180, 180);
+        }
+        /* span{
+            background-color: #000;
+            width: 5rem;
+            display: block;
+            line-height: 15rem;
+        } */
+
+    </style>
+</head>
+
+<body>
+    <!-- <span>
+        <button>ggr</button>
+    </span> -->
+    <img src="flower.png" alt="">
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Item</a>
+                </li>
+                <li>
+                    <a href="#">Item</a>
+                </li>
+                <li>
+                    <a href="#">Item</a>
+                </li>
+                <li>
+                    <a href="#">Item</a>
+                </li>
+                <li>
+                    <a href="#">Item</a>
+                </li>
+                <li>
+                    <a href="#">Item</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="content1">
+            <h2>Lorem ipsum dolor</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquam pariatur quibusdam quo enim dolor.
+                Velit illo dignissimos neque, ipsa expedita eos aspernatur. Nam repellat animi laudantium doloremque? Libero
+                quos adipisci reprehenderit tempore in? Repudiandae voluptatem voluptas vitae tenetur facilis molestiae
+                consequatur obcaecati nam ea accusantium libero porro illo itaque expedita eaque explicabo dolores, earum
+                quam laborum delectus numquam culpa voluptates. Earum, soluta delectus excepturi tempore illo recusandae
+                optio eligendi molestias saepe nulla quibusdam veritatis dolore dolores blanditiis eius obcaecati.
+            </p>
+        </div>
+
+        <div class="content2">
+            <h2>Earum soluta delectus</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquam pariatur quibusdam quo enim dolor.
+                Velit illo dignissimos neque, ipsa expedita eos aspernatur. Nam repellat animi laudantium doloremque? Libero
+                quos adipisci reprehenderit tempore in? Repudiandae voluptatem voluptas vitae tenetur facilis molestiae
+                consequatur obcaecati nam ea accusantium libero porro illo itaque expedita eaque explicabo dolores, earum
+                quam laborum delectus numquam culpa voluptates. Earum, soluta delectus excepturi tempore illo recusandae
+                optio eligendi molestias saepe nulla quibusdam veritatis dolore dolores blanditiis eius obcaecati.
+            </p>
+        </div>
+
+
+    </div>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
+<!-- https://dianagerman28.wixsite.com/my-site-2 -->

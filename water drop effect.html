@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Drop Effect</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        *::before, *::after{
+            content: "";
+            position: absolute;
+        }
+
+        body{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(240, 240, 240);;
+            display: flex;
+            font-family: sans-serif;
+            font-weight: 900;
+        }
+
+        div{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            display: grid;
+            place-content: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 20px 20px 30px rgb(215, 214, 214),
+            10px 10px 30px rgb(229, 226, 226) inset,
+            -20px -20px 30px rgb(255, 255, 255) inset;
+            animation: animate 10s linear infinite;
+        }
+
+        div::before, div::after{
+            width: 15px;
+            height: 25px;
+            background-color: #fff;
+            border-radius: 50%;
+            filter: blur(5px);
+            top: 30%;
+            left: 15%;
+        }
+
+        div::after{
+            width: 10px;
+            height: 15px;
+            top: 50%;
+        }
+
+        @keyframes animate {
+            0%, 100%{
+                top: 10%;
+                transform: translate(-50%, -50%) skew(0);
+            }
+            20%, 40%, 60%, 80%{
+                transform: translate(-50%, -50%) skew(3deg);
+            }
+            10%, 30%, 70%, 90%{
+                transform: translate(-50%, -50%) skew(-3deg);
+            }
+            50%{
+                top: 80%;
+                transform: translate(-50%, -50%) skew(-5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Water drop
+    </div>
+</body>
+</html>
+<!-- https://www.youtube.com/watch?v=83qXTul1oP4&ab_channel=OnlineTutorials -->

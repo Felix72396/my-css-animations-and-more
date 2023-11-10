@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        header {
+            background-color: black;
+            width: 100%;
+            height: auto;
+            padding: 1rem;
+            position: relative;
+            /* top: 0; */
+            z-index: 9;
+            /* position: relative; */
+            /* overflow: hidden; */
+        }
+
+        nav {
+            /* width: 100%; */
+            /* height: 5rem; */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        li {
+            list-style: none;
+            width: 10rem;
+            height: 5rem;
+            margin-top: .2rem;
+            margin-right: 1px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(26, 25, 25);
+            color: white;
+        }
+
+        a:hover {
+            background-color: rgb(188, 89, 89);
+        }
+
+        header nav ul .drop-down {
+            position: relative;
+            width: 10rem;
+        }
+
+        header nav ul .drop-down::before {
+            content: "";
+            height: 100%;
+            width: 0;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            transition: .5s;
+        }
+
+        header nav ul .drop-down:hover:before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            background-color: rgb(255, 255, 255, .2);
+            position: absolute;
+            transition: 1.5s;
+        }
+
+        header nav ul .drop-down::after {
+            content: "";
+            height: 2px;
+            width: 20%;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        header nav ul .drop-down:hover:after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 0, 0, .6);
+            position: absolute;
+            transition: .2s;
+        }
+
+        .drop-down ul {
+            display: none;
+            height: auto;
+        }
+
+        .display-menu {
+            display: block !important;
+        }
+
+        .drop-down ul li {
+            width: 100%;
+            margin: 0 auto;
+            z-index: 5;
+            border-bottom: 1px solid rgb(188, 89, 89);
+        }
+
+        .drop-down ul li a{
+            font-size: 1.5rem;
+        }
+
+        /* .select-drop-down-color {
+            background-color: transparent;
+        } */
+
+        /* @media(max-width:700px) {
+
+            header nav ul .drop-down::after,
+            header nav ul .drop-down::before {
+                content: none;
+            }
+
+            header nav ul .drop-down:hover:after,
+            header nav ul .drop-down:hover:before {
+                content: none;
+            }
+
+        } */
+    </style>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%; 
+            height: 100vh;
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        h1 {
+            width: 100%;
+            margin-top: 2px;
+            line-height: 50px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            z-index: 1;
+        }
+
+        .container {
+            width: 90%;
+            min-width: 15rem;
+            height: auto;
+            min-height: 20rem;
+            margin: .2rem auto;
+            background-color: black;
+            /* display: flow-root; */
+        
+        }
+
+        main {
+            height: auto;
+            /* min-height: 30rem; */
+            width: calc(60% - 2rem);
+            background-color: black;
+            float: left;
+            padding: 1rem;
+         
+        }
+
+        main section {
+            background-color: rgb(15, 15, 15);
+            height: inherit;
+            width: calc(100% - 2rem);
+            padding: 1rem;
+            border-radius: 5rem;
+            margin: auto;
+        }
+
+        main section article[class*='article'] {
+            background-color: rgb(28, 27, 27);
+            height: inherit;
+            padding: 1rem;
+            width: calc(100% - 2rem);
+            border-radius: 5rem;
+            margin: 0 auto;
+        }
+
+        main section article:first-child ~ article {
+            margin-top: 1rem;
+        }
+
+        main section p ~ p {
+            margin-top: 1rem;
+        }
+
+        /* we use calc() function in this case to reduce 2rem of the padding 1rem of padding-left and 1rem of the right one, which makes 2rem. So
+        it's calc(38% - 2rem) and the same we do with the high */
+        aside {
+            min-height: 30rem;
+            height: auto;
+            width: calc(40% - 2rem);
+            padding: 1rem;
+            background-color: black;
+            float: right;
+            overflow: hidden;
+        }
+
+        aside div{
+            height: auto;
+            width: calc(100% - 2rem);
+            padding: 1rem;
+            margin: auto;
+            border-radius: 5rem;
+            background-color: rgb(15, 15, 15);
+        }
+
+        aside div p ~ p{
+            margin-top: 1rem;
+        }
+
+
+        p {
+            background-color: rgb(42, 40, 40);
+            line-height: 2;
+            font-size: 2rem;
+            text-align: justify;
+            border-radius: 5rem;
+            padding: 2rem;
+            
+            overflow: hidden;
+        }
+
+        p::first-letter {
+            text-transform: capitalize;
+        }
+
+        p::first-line {
+            color: blue;
+        }
+
+        h2{
+            text-align: center;
+            background-color: rgb(15, 15, 15);
+            line-height: 2;
+            font-size: 2rem;
+            position: sticky;
+            top: 0;
+            border-radius: 5rem;
+            z-index: 3;
+        }
+
+        h3{
+            text-align: center;
+            background-color: rgb(15, 15, 15);
+            line-height: 2;
+            font-size: 2rem;
+            border-radius: 5rem;
+        }
+
+        footer {
+            background-color: black;
+            width: calc(100% );
+            height: auto;
+            padding: 1rem;
+            clear: both;
+        }
+
+        @media(max-width:900px) {
+            p {
+                line-height: 1;
+                font-size: 1.8rem;
+            }
+
+            main {
+                width: auto;
+                min-height: 10rem;
+                margin: 0 auto;
+            }
+
+            aside {
+                width: auto;
+                min-height: 10rem;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+
+
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Content">Content</a></li>
+                <li class="drop-down"><a href="#">Courses</a>
+                    <ul>
+                        <li><a href="#Programming">Programming</a></li>
+                        <li><a href="#English">English</a></li>
+                        <li><a href="#French">French</a></li>
+                        <li><a href="#Maths">Maths</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#About us">About us</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li><a href="#Help">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Content</h1>
+    <div class="container">
+      <main>
+        <section>     
+                <h2>Article 1</h2>
+                <article class="article">
+                    <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium id quasi, ex facilis
+                        quod
+                        magnam, doloribus quidem, delectus qui possimus ut sed perferendis eligendi repellat accusantium
+                        rerum
+                        laborum numquam.</p>
+
+                        <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium id quasi, ex facilis
+                            quod
+                            magnam, doloribus quidem, delectus qui possimus ut sed perferendis eligendi repellat accusantium
+                            rerum
+                            laborum numquam.</p>
+                </article>
+
+                <h2>Article 2</h2>
+                <article class="article">
+                    <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium id quasi, ex facilis
+                        quod
+                        magnam, doloribus quidem, delectus qui possimus ut sed perferendis eligendi repellat accusantium
+                        rerum
+                        laborum numquam.</p>
+                </article>
+
+                <h2>Article 3</h2>
+                <article class="article">
+                    <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium id quasi, ex facilis
+                        quod
+                        magnam, doloribus quidem, delectus qui possimus ut sed perferendis eligendi repellat accusantium
+                        rerum
+                        laborum numquam.</p>
+
+                        <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium id quasi, ex facilis
+                            quod
+                            magnam, doloribus quidem, delectus qui possimus ut sed perferendis eligendi repellat accusantium
+                            rerum
+                            laborum numquam.</p>
+                </article>
+            </section>
+        </main>
+        
+
+        <aside>
+           <div>
+            <h3>More info</h3>
+            <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium id quasi, ex facilis quod
+                magnam, doloribus quidem, delectus qui possimus ut sed perferendis eligendi repellat accusantium rerum
+                laborum numquam.</p>
+
+                <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium id quasi, ex facilis quod
+                    magnam, doloribus quidem, delectus qui possimus ut sed perferendis eligendi repellat accusantium rerum
+                    laborum numquam.</p>
+           </div>
+        </aside>
+        <!-- I added the div bellow because if I don't then the container won't appear because of the inside float elements and if I add a div and its attribute style to add
+        css I can clean the floats elements and make the main container appear and conver its children elements -->
+        <div style="clear: both"></div>
+    </div>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    // document.querySelectorAll(".drop-down ul li").forEach(function (li) {
+    //     li.addEventListener("mouseover", function () {
+    //         document.querySelector(".drop-down a").classList.add("hover-drop-down-color");
+    //     });
+
+    //     li.addEventListener("mouseout", function () {
+    //         document.querySelector(".drop-down a").classList.remove("hover-drop-down-color");
+    //     });
+
+    //     li.addEventListener("click", function () {
+    //         document.querySelector(".drop-down ul").classList.remove("display-menu");
+    //     });
+       
+    // });
+
+    document.querySelectorAll(".drop-down").forEach(function (li) {
+        li.addEventListener("click", function () {
+            // document.querySelector(".drop-down a").classList.toggle("select-drop-down-color");
+            document.querySelector(".drop-down ul").classList.toggle("display-menu");
+        });
+
+        li.addEventListener("mouseover", function () {
+            // document.querySelector(".drop-down a").classList.toggle("hover-drop-down-color");
+            document.querySelector(".drop-down ul").classList.toggle("display-menu");
+        });
+
+        li.addEventListener("mouseout", function () {
+            // document.querySelector(".drop-down a").classList.remove("select-drop-down-color");
+            document.querySelector(".drop-down ul").classList.remove("display-menu");
+        });
+
+    });
+
+</script>
+
+<!-- https://www.tutorialmonsters.com/css-limpiar-floats/ -->
+<!-- https://uniwebsidad.com/libros/css-avanzado/capitulo-1/limpiar-floats -->

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weird Card</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #442559;
+            display: flex;
+
+        }
+
+        div.card {
+            margin: auto;
+            position: relative;
+            border-top-right-radius: 2rem;
+            overflow: hidden;
+            width: 20rem;
+            height: 28rem;
+            background: linear-gradient(to bottom, rgb(248, 7, 248), rgb(84, 84, 206));
+            box-shadow: 0 -1rem 0 0 rgb(105, 105, 205) inset,
+                0 1rem 0 0 rgb(207, 195, 195),
+                0 3rem 0 0 rgba(16, 2, 26, 0.208);
+            border-bottom-left-radius: 180px;
+            border-bottom-right-radius: 180px;
+            border-top-left-radius: 2rem;
+            transform: scale(.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            z-index: 1;
+            transition: .2s all;
+        }
+
+        div.card:hover{
+            cursor: pointer;
+            transform: scale(1);
+        }
+
+        div.card::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 120%;
+
+            transform: rotate(38deg);
+            top: -10rem;
+            left: -8rem;
+            filter: blur(7px);
+            background: rgba(255, 255, 255, 0.272);
+            z-index: -1;
+        }
+
+        div.card div.hole {
+            position: absolute;
+            width: 8rem;
+            height: 6rem;
+            top: 0;
+            left: calc(50% - 4rem);
+            border-bottom-left-radius: 4rem;
+            border-bottom-right-radius: 4rem;   
+            background: url(diamond.png);
+            background-color: #442559;
+            background-position: top center;
+            background-size: 5rem 5rem;
+            background-repeat: no-repeat;
+            box-shadow: 0 .5rem 0 0 #fff,
+                0 1rem 0 0 rgba(125, 13, 125, 0.205);
+        }
+
+        div.card div.hole::before {
+            content: "";
+            position: absolute;
+            width: 3.05rem;
+            height: 3rem;
+            border-top-right-radius: 4rem;
+            left: -3rem;
+            top: 0;
+
+            background-color: transparent;
+            box-shadow: 1rem -.8rem 0 0 #442559,
+                .1rem -1rem 0 0 #442559;
+        }
+
+        div.card div.hole::after {
+            content: "";
+            position: absolute;
+            width: 3.05rem;
+            height: 3rem;
+            border-top-left-radius: 4rem;
+            right: -3rem;
+            top: 0;
+
+            background-color: transparent;
+            box-shadow: -1rem -.8rem 0 0 #442559,
+                -.1rem -1rem 0 0 #442559;
+        }
+
+        div.circle {
+            width: auto;
+            height: 5rem;
+            margin: auto;
+            border-radius: 50%;
+            border: 5px dotted rgb(0, 0, 0);
+            border-bottom: 5px dotted transparent;
+            border-right: 5px dotted transparent;
+            border-left: 5px dotted transparent;
+            display: grid;
+            place-content: center;
+            color: rgb(0, 0, 0);
+            font-size: 1.5rem;
+            position: absolute;
+            top: 28%;
+        }
+
+        div.card p{
+            position: absolute;
+            top: 38%;
+            width: 100%;
+            border-radius: 2rem;
+            font-size: 1rem;
+            padding: 2rem;
+            text-align: justify;
+        }
+
+        div.card span {
+            color: #fff;
+        }
+
+        div.card img{
+            position: absolute;
+            width: 15rem;
+            height: 15rem;
+            z-index: -1;
+            right: -2rem;
+            bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="hole"></div>
+        <div class="circle">Card Title</div>
+        <p>Lorem, ipsum <span>dolor sit amet</span> consectetur <span>adipisicing elit.</span> Eum recusa<span>ndae doloribus non</span> nam modi <span>rerum, maxime
+            enim</span> quas ar<span>chitecto commodi dolor</span> ipsum <span>voluptates excepturi</span> quae <span>nobis officiis quos ex</span> rat<span>ione.</span></p>
+        <img src="crack.png" alt="">
+    </div>
+
+</body>
+
+</html>
+
+<!-- https://www.youtube.com/watch?v=waY55vGtUyo&ab_channel=OnlineTutorials -->

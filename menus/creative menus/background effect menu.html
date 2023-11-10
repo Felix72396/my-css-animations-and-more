@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative menu</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            font-family: sans-serif;
+            overflow: hidden;
+            transition: 1s all;
+        }
+
+        ul{
+            list-style: none;
+            margin: auto;
+        }
+
+        ul li a{
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            padding: 1rem;
+            font-size: 4rem;
+            color: rgb(60, 57, 57);
+            transition: 2s all;
+        }
+
+        li a:hover{
+            background-color: #fff;
+            color: #000;
+        }
+
+        h2{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+
+            font-size: 20rem;
+            color: rgba(109, 109, 109, 0.542);
+            z-index: -1;
+            letter-spacing: 5rem;
+            opacity: 0;
+            transition: 1s all;
+
+        }
+
+       
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <h2>HOME</h2>
+    <h2>ABOUT</h2>
+    <h2>SERVICES</h2>
+    <h2>WORK</h2>
+    <h2>TEAM</h2>
+    <h2>CONTACT</h2>
+
+    <script>
+        const item_list = document.getElementsByTagName("li");
+        const h2_array = document.getElementsByTagName("h2");
+
+        for (let index = 0; index < item_list.length; index++) 
+        {
+           item_list[index].addEventListener("mouseover", function()
+           {
+            pick_color(index);
+            show_title(index);
+           });
+
+           item_list[index].addEventListener("mouseleave", function()
+           {
+            document.body.style.backgroundColor = "#fff";
+            hide_title(index);
+           });
+        }
+
+        function pick_color(p_index)
+        {
+            switch(p_index)
+            {               
+                case 0:
+                    document.body.style.backgroundColor = "rgb(236, 84, 84)";
+                break;
+
+                case 1:
+                    document.body.style.backgroundColor = "rgb(115, 58, 246)";
+                break;
+
+                case 2:
+                    document.body.style.backgroundColor = "rgb(101, 234, 132)";
+                break;
+
+                case 3:
+                    document.body.style.backgroundColor = "pink";
+                break;
+
+                case 4:
+                    document.body.style.backgroundColor = "rgb(241, 178, 62)";
+                break;
+
+                case 5:
+                    document.body.style.backgroundColor = "rgb(230, 73, 230)";
+                break;
+            }
+        }
+
+        function show_title(p_index)
+        {
+            h2_array[p_index].style.letterSpacing = "0";
+            h2_array[p_index].style.opacity = "1";
+        }
+
+        function hide_title(p_index)
+        {
+            for (let index = 0; index < h2_array.length; index++) 
+            {
+                h2_array[index].style.letterSpacing = "15rem";
+                h2_array[index].style.opacity = "0";
+            }       
+        }
+    </script>
+</body>
+</html>
