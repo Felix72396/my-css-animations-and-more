@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: -10%;
+            top: 50%;
+            animation: mmg 3s ease-in-out infinite;
+        }
+
+        @keyframes mmg {
+            0%{
+                left: -10%;
+                opacity: 1;
+                rotate: 0;
+            }
+            50%{
+                left: 90%;
+                opacity: .5;
+                rotate: 1turn;
+            }
+            80%{
+                box-shadow: 0 0 1000rem 1000rem #eaae08;
+                border-radius: 50%;
+            }
+            100%{
+                left: 120%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="fire.jpg" alt="">
+</body>
+</html>
